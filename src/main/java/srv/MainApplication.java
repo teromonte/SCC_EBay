@@ -1,6 +1,7 @@
-package srv;
+package main.java.srv;
 
 import jakarta.ws.rs.core.Application;
+import main.java.srv.MediaResource;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -11,7 +12,7 @@ public class MainApplication extends Application
 	private Set<Class<?>> resources = new HashSet<Class<?>>();
 
 	public MainApplication() {
-		resources.add(ControlResource.class);
+		resources.add(srv.ControlResource.class);
 		resources.add(MediaResource.class);
 		singletons.add( new MediaResource());	
 	}

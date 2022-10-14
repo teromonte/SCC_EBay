@@ -1,12 +1,11 @@
-package utils;
+package main.java.utils;
 
 import java.util.Locale;
 
 import com.azure.cosmos.models.CosmosItemResponse;
 import com.azure.cosmos.util.CosmosPagedIterable;
 
-import scc.data.CosmosDBLayer;
-import scc.data.UserDAO;
+import main.java.data.*;
 
 /**
  * Standalone program for accessing the database
@@ -20,8 +19,8 @@ public class TestUsers
 			Locale.setDefault(Locale.US);
 			CosmosDBLayer db = CosmosDBLayer.getInstance();
 			String id = "0:" + System.currentTimeMillis();
-			CosmosItemResponse<UserDAO> res = null;
-			UserDAO u = new UserDAO();
+			CosmosItemResponse<data.UserDAO> res = null;
+			data.UserDAO u = new data.UserDAO();
 			u.setId(id);
 			u.setName("SCC " + id);
 			u.setPwd("super_secret");
@@ -34,21 +33,21 @@ public class TestUsers
 			System.out.println( res.getItem());
 
 			System.out.println( "Get for id = " + id);
-			CosmosPagedIterable<UserDAO> resGet = db.getUserById(id);
-			for( UserDAO e: resGet) {
+			CosmosPagedIterable<data.UserDAO> resGet = db.getUserById(id);
+			for( data.UserDAO e: resGet) {
 				System.out.println( e);
 			}
 
 			System.out.println( "Get for all ids");
 			resGet = db.getUsers();
-			for( UserDAO e: resGet) {
+			for( data.UserDAO e: resGet) {
 				System.out.println( e);
 			}
 
 			// Now, let's create and delete
 			id = "0:" + System.currentTimeMillis();
 			res = null;
-			u = new UserDAO();
+			u = new data.UserDAO();
 			u.setId(id);
 			u.setName("SCC " + id);
 			u.setPwd("super_secret");
@@ -63,7 +62,7 @@ public class TestUsers
 
 			System.out.println( "Get by id result");
 			resGet = db.getUserById(id);
-			for( UserDAO e: resGet) {
+			for( data.UserDAO e: resGet) {
 				System.out.println( e);
 			}
 			
@@ -72,7 +71,7 @@ public class TestUsers
 
 			System.out.println( "Get by id result");
 			resGet = db.getUserById(id);
-			for( UserDAO e: resGet) {
+			for( data.UserDAO e: resGet) {
 				System.out.println( e);
 			}
 

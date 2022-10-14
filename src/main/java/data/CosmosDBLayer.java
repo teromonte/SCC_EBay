@@ -1,4 +1,4 @@
-package data;
+package main.java.data;
 
 import com.azure.cosmos.ConsistencyLevel;
 import com.azure.cosmos.CosmosClient;
@@ -59,24 +59,24 @@ public class CosmosDBLayer {
 		return users.deleteItem(id, key, new CosmosItemRequestOptions());
 	}
 	
-	public CosmosItemResponse<Object> delUser(UserDAO user) {
+	public CosmosItemResponse<Object> delUser(data.UserDAO user) {
 		init();
 		return users.deleteItem(user, new CosmosItemRequestOptions());
 	}
 	
-	public CosmosItemResponse<UserDAO> putUser(UserDAO user) {
+	public CosmosItemResponse<data.UserDAO> putUser(data.UserDAO user) {
 		init();
 		return users.createItem(user);
 	}
 	
-	public CosmosPagedIterable<UserDAO> getUserById( String id) {
+	public CosmosPagedIterable<data.UserDAO> getUserById(String id) {
 		init();
-		return users.queryItems("SELECT * FROM users WHERE users.id=\"" + id + "\"", new CosmosQueryRequestOptions(), UserDAO.class);
+		return users.queryItems("SELECT * FROM users WHERE users.id=\"" + id + "\"", new CosmosQueryRequestOptions(), data.UserDAO.class);
 	}
 
-	public CosmosPagedIterable<UserDAO> getUsers() {
+	public CosmosPagedIterable<data.UserDAO> getUsers() {
 		init();
-		return users.queryItems("SELECT * FROM users ", new CosmosQueryRequestOptions(), UserDAO.class);
+		return users.queryItems("SELECT * FROM users ", new CosmosQueryRequestOptions(), data.UserDAO.class);
 	}
 
 	public void close() {

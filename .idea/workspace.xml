@@ -4,17 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b469088-9480-470d-bb72-0267c4b9bd8d" name="Changes" comment="first steps">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/data/CosmosDBLayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/data/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/data/UserDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/DownloadFromStorage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/TestUsers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/UploadToStorage.java" afterDir="false" />
+    <list default="true" id="1b469088-9480-470d-bb72-0267c4b9bd8d" name="Changes" comment="first steps 3">
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/CosmosDBLayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/CosmosDBLayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/srv/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/srv/MainApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/srv/MediaResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/srv/MediaResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/Hash.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/Hash.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/TestUsers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/TestUsers.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,11 +35,13 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/home/thiago/Desktop/SCC/PRACTICAL/LAB3/SCC_EBay/src/main/java/utils"
+    "last_opened_file_path": "/home/thiago/Desktop/SCC/PRACTICAL/LAB3/SCC_EBay"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/test" />
       <recent name="$PROJECT_DIR$/src/main/java/utils" />
       <recent name="$PROJECT_DIR$/src/main/java/data" />
       <recent name="$PROJECT_DIR$/src/main/java/srv" />
@@ -66,7 +66,21 @@
       <option name="project" value="LOCAL" />
       <updated>1665744657467</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="first steps 2">
+      <created>1665745430911</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1665745430911</updated>
+    </task>
+    <task id="LOCAL-00003" summary="first steps 3">
+      <created>1665745491073</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1665745491073</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -74,7 +88,13 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="false" />
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -82,6 +102,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first steps" />
-    <option name="LAST_COMMIT_MESSAGE" value="first steps" />
+    <MESSAGE value="first steps 2" />
+    <MESSAGE value="first steps 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="first steps 3" />
   </component>
 </project>
