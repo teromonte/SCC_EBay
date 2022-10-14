@@ -1,4 +1,4 @@
-package srv;
+package main.java.srv;
 
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
@@ -20,7 +20,7 @@ public class ControlResource
 	@GET
 	@Produces(MediaType.TEXT_PLAIN)
 	public String hello() {
-		return "v: 0001";
+		return "v: Projeto SCC v1";
 	}
 
 }

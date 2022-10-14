@@ -59,24 +59,24 @@ public class CosmosDBLayer {
 		return users.deleteItem(id, key, new CosmosItemRequestOptions());
 	}
 	
-	public CosmosItemResponse<Object> delUser(data.UserDAO user) {
+	public CosmosItemResponse<Object> delUser(UserDAO user) {
 		init();
 		return users.deleteItem(user, new CosmosItemRequestOptions());
 	}
 	
-	public CosmosItemResponse<data.UserDAO> putUser(data.UserDAO user) {
+	public CosmosItemResponse<UserDAO> putUser(UserDAO user) {
 		init();
 		return users.createItem(user);
 	}
 	
-	public CosmosPagedIterable<data.UserDAO> getUserById(String id) {
+	public CosmosPagedIterable<UserDAO> getUserById(String id) {
 		init();
-		return users.queryItems("SELECT * FROM users WHERE users.id=\"" + id + "\"", new CosmosQueryRequestOptions(), data.UserDAO.class);
+		return users.queryItems("SELECT * FROM users WHERE users.id=\"" + id + "\"", new CosmosQueryRequestOptions(), UserDAO.class);
 	}
 
-	public CosmosPagedIterable<data.UserDAO> getUsers() {
+	public CosmosPagedIterable<UserDAO> getUsers() {
 		init();
-		return users.queryItems("SELECT * FROM users ", new CosmosQueryRequestOptions(), data.UserDAO.class);
+		return users.queryItems("SELECT * FROM users ", new CosmosQueryRequestOptions(), UserDAO.class);
 	}
 
 	public void close() {

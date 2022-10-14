@@ -12,7 +12,7 @@ public class MainApplication extends Application
 	private Set<Class<?>> resources = new HashSet<Class<?>>();
 
 	public MainApplication() {
-		resources.add(srv.ControlResource.class);
+		resources.add(ControlResource.class);
 		resources.add(MediaResource.class);
 		singletons.add( new MediaResource());	
 	}
