@@ -5,21 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b469088-9480-470d-bb72-0267c4b9bd8d" name="Changes" comment="working">
-      <change afterPath="$PROJECT_DIR$/WebContent/META-INF/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebContent/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebContent/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/CosmosDBLayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/CosmosDBLayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/srv/ControlResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/srv/ControlResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/srv/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/srv/MainApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/DownloadFromStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/DownloadFromStorage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/TestUsers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/TestUsers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/UploadToStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/UploadToStorage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +84,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665745977309</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="working">
+      <created>1665748059278</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1665748059278</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
