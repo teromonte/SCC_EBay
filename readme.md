@@ -8,6 +8,8 @@ CosmosDB: https://portal.azure.com/#@unlpt.onmicrosoft.com/resource/subscription
 
 Blob storage: https://portal.azure.com/#@unlpt.onmicrosoft.com/resource/subscriptions/8fbd0b0f-6d30-4275-9a30-a6ae3afbd36a/resourceGroups/scc-backend-rg-55355/providers/Microsoft.Storage/storageAccounts/scc55355/containersList
 
+All Resources: https://portal.azure.com/#view/HubsExtension/BrowseAll
+
 Gilson Agostinho Manuel
 g.manuel@FCT.UNL.PT
 

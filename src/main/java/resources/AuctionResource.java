@@ -6,7 +6,6 @@ import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import main.java.models.entities.Auction;
 import main.java.models.entities.Bid;
-import main.java.models.entities.User;
 
 /**
  * Class with control endpoints.
@@ -45,7 +44,8 @@ public class AuctionResource {
     @Produces(MediaType.APPLICATION_JSON)
     public String listBid(@PathParam("id") String id) throws JsonProcessingException {
         ObjectMapper mapper = new ObjectMapper();
-        return mapper.writeValueAsString(bid);
+        //return mapper.writeValueAsString(bid);
+        return null;
     }
 
     @Path("/{id}/question")
@@ -53,7 +53,8 @@ public class AuctionResource {
     @Produces(MediaType.APPLICATION_JSON)
     public String listQuestion(@PathParam("id") String id) throws JsonProcessingException {
         ObjectMapper mapper = new ObjectMapper();
-        return mapper.writeValueAsString(bid);
+        //return mapper.writeValueAsString(bid);
+        return null;
     }
 
     @Path("/{id}/question")
@@ -64,6 +65,7 @@ public class AuctionResource {
         ObjectMapper mapper = new ObjectMapper();
         return mapper.writeValueAsString(bid);
     }
+
     @Path("/{id}/question/{id}")
     @POST
     @Consumes(MediaType.APPLICATION_JSON)

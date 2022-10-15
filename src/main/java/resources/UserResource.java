@@ -26,7 +26,9 @@ public class UserResource {
     @Produces(MediaType.APPLICATION_JSON)
     public String getUser(@PathParam("id") String id) throws JsonProcessingException {
         ObjectMapper mapper = new ObjectMapper();
-        return mapper.writeValueAsString(user);
+
+        //return mapper.writeValueAsString(user);
+        return null;
     }
 
     @Path("/{id}/delete")
@@ -34,6 +36,7 @@ public class UserResource {
     @Produces(MediaType.APPLICATION_JSON)
     public String deleteUser(@PathParam("id") String id) throws JsonProcessingException {
         ObjectMapper mapper = new ObjectMapper();
-        return mapper.writeValueAsString(user);
+        //return mapper.writeValueAsString(user);
+        return null;
     }
 }

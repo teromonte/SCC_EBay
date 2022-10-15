@@ -2,8 +2,6 @@ package main.java.models.DAO;
 
 import main.java.models.entities.User;
 
-import java.util.Arrays;
-
 /**
  * Represents a User, as stored in the database
  */
@@ -12,24 +10,24 @@ public class UserDAO {
     private String _ts;
     private String id;
     private String name;
+    private String nickname;
     private String pwd;
     private String photoId;
-    private String[] channelIds;
 
     public UserDAO() {
     }
 
     public UserDAO(User u) {
-        this(u.getId(), u.getName(), u.getPwd(), u.getPhotoId(), u.getChannelIds());
+        this(u.getId(), u.getName(), u.getNickname(), u.getPwd(), u.getPhotoId());
     }
 
-    public UserDAO(String id, String name, String pwd, String photoId, String[] channelIds) {
+    public UserDAO(String id, String name, String nickname, String pwd, String photoId) {
         super();
         this.id = id;
         this.name = name;
+        this.nickname = nickname;
         this.pwd = pwd;
         this.photoId = photoId;
-        this.channelIds = channelIds;
     }
 
     public String get_rid() {
@@ -64,6 +62,14 @@ public class UserDAO {
         this.name = name;
     }
 
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
+
     public String getPwd() {
         return pwd;
     }
@@ -80,21 +86,12 @@ public class UserDAO {
         this.photoId = photoId;
     }
 
-    public String[] getChannelIds() {
-        return channelIds == null ? new String[0] : channelIds;
-    }
-
-    public void setChannelIds(String[] channelIds) {
-        this.channelIds = channelIds;
-    }
-
     public User toUser() {
-        return new User(id, name, pwd, photoId, channelIds == null ? null : Arrays.copyOf(channelIds, channelIds.length));
+        return new User(id, name, nickname, pwd, photoId);
     }
 
     @Override
     public String toString() {
-        return "UserDAO [_rid=" + _rid + ", _ts=" + _ts + ", id=" + id + ", name=" + name + ", pwd=" + pwd + ", photoId=" + photoId + ", channelIds=" + Arrays.toString(channelIds) + "]";
+        return "UserDAO{" + "_rid='" + _rid + '\'' + ", _ts='" + _ts + '\'' + ", id='" + id + '\'' + ", name='" + name + '\'' + ", nickname='" + nickname + '\'' + ", pwd='" + pwd + '\'' + ", photoId='" + photoId + '\'' + '}';
     }
-
 }

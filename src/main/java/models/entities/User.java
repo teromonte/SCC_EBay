@@ -1,24 +1,22 @@
 package main.java.models.entities;
 
-import java.util.Arrays;
-
 /**
  * Represents a User, as returned to the clients
  */
 public class User {
     private String id;
     private String name;
+    private String nickname;
     private String pwd;
     private String photoId;
-    private String[] channelIds;
 
-    public User(String id, String name, String pwd, String photoId, String[] channelIds) {
+    public User(String id, String name, String nickname, String pwd, String photoId) {
         super();
         this.id = id;
         this.name = name;
+        this.nickname = nickname;
         this.pwd = pwd;
         this.photoId = photoId;
-        this.channelIds = channelIds;
     }
 
     public String getId() {
@@ -37,6 +35,14 @@ public class User {
         this.name = name;
     }
 
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String name) {
+        this.nickname = nickname;
+    }
+
     public String getPwd() {
         return pwd;
     }
@@ -53,17 +59,8 @@ public class User {
         this.photoId = photoId;
     }
 
-    public String[] getChannelIds() {
-        return channelIds == null ? new String[0] : channelIds;
-    }
-
-    public void setChannelIds(String[] channelIds) {
-        this.channelIds = channelIds;
-    }
-
     @Override
     public String toString() {
-        return "User [id=" + id + ", name=" + name + ", pwd=" + pwd + ", photoId=" + photoId + ", channelIds=" + Arrays.toString(channelIds) + "]";
+        return "User{" + "id='" + id + '\'' + ", name='" + name + '\'' + ", nickname='" + nickname + '\'' + ", pwd='" + pwd + '\'' + ", photoId='" + photoId + '\'' + '}';
     }
-
 }

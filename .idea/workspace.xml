@@ -4,9 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b469088-9480-470d-bb72-0267c4b9bd8d" name="Changes" comment="structure v2">
+    <list default="true" id="1b469088-9480-470d-bb72-0267c4b9bd8d" name="Changes" comment="add links">
+      <change afterPath="$PROJECT_DIR$/src/main/java/DAL/gateway/IBidGateway.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DAL/gateway/IQuestionGateway.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DAL/repository/BidRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DAL/repository/QuestionRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAL/CosmosDBLayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAL/CosmosDBLayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAL/gateway/IMediaGateway.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAL/gateway/IUserGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAL/gateway/IUserGateway.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAL/repository/MediaRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAL/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAL/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/DAO/AuctionDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/DAO/AuctionDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/DAO/BidDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/DAO/BidDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/DAO/QuestionDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/DAO/QuestionDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/DAO/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/DAO/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/entities/Auction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/entities/Auction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/entities/Bid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/entities/Bid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/entities/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/entities/Question.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/resources/AuctionResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/resources/AuctionResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/resources/UserResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/resources/UserResource.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +154,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665838977394</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="add links">
+      <created>1665843210873</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1665843210873</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -166,6 +192,7 @@
     <MESSAGE value="Added Models and DAOs and Resources" />
     <MESSAGE value="structure" />
     <MESSAGE value="structure v2" />
-    <option name="LAST_COMMIT_MESSAGE" value="structure v2" />
+    <MESSAGE value="add links" />
+    <option name="LAST_COMMIT_MESSAGE" value="add links" />
   </component>
 </project>
