@@ -10,6 +10,7 @@ import com.azure.cosmos.models.CosmosItemResponse;
 import com.azure.cosmos.models.CosmosQueryRequestOptions;
 import com.azure.cosmos.models.PartitionKey;
 import com.azure.cosmos.util.CosmosPagedIterable;
+import main.java.data.DAO.UserDAO;
 
 public class CosmosDBLayer {
 	private static final String CONNECTION_URL = "https://scc22234204.documents.azure.com:443/";

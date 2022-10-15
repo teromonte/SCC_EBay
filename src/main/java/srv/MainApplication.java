@@ -1,7 +1,8 @@
 package main.java.srv;
 
 import jakarta.ws.rs.core.Application;
-import main.java.srv.MediaResource;
+import main.java.srv.resources.ControlResource;
+import main.java.srv.resources.MediaResource;
 
 import java.util.HashSet;
 import java.util.Set;

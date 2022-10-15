@@ -1,4 +1,6 @@
-package main.java.data;
+package main.java.data.DAO;
+
+import main.java.data.models.User;
 
 import java.util.Arrays;
 

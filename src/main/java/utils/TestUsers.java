@@ -6,6 +6,7 @@ import com.azure.cosmos.models.CosmosItemResponse;
 import com.azure.cosmos.util.CosmosPagedIterable;
 
 import main.java.data.*;
+import main.java.data.DAO.UserDAO;
 
 /**
  * Standalone program for accessing the database

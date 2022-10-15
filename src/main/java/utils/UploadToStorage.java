@@ -24,7 +24,11 @@ public class UploadToStorage {
             BinaryData data = BinaryData.fromFile(Path.of(filename));
 
             // Get container client
-            BlobContainerClient containerClient = new BlobContainerClientBuilder().connectionString(storageConnectionString).containerName("images").buildClient();
+            BlobContainerClient containerClient =
+                    new BlobContainerClientBuilder()
+                    .connectionString(storageConnectionString)
+                    .containerName("images")
+                    .buildClient();
 
             // Get client to blob
             BlobClient blob = containerClient.getBlobClient(filename);

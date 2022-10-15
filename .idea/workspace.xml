@@ -4,14 +4,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b469088-9480-470d-bb72-0267c4b9bd8d" name="Changes" comment="working">
+    <list default="true" id="1b469088-9480-470d-bb72-0267c4b9bd8d" name="Changes" comment="working 2">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/data/DAO/AuctionDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/data/DAO/BidDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/data/DAO/QuestionDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/data/models/Auction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/data/models/Bid.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/data/models/Question.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/data/models/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/srv/resources/AuctionResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/srv/resources/UserResource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/CosmosDBLayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/CosmosDBLayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/DAO/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/srv/ControlResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/srv/resources/ControlResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/srv/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/srv/MainApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/srv/MediaResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/srv/resources/MediaResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/TestUsers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/TestUsers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/UploadToStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/UploadToStorage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -29,6 +54,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "last_opened_file_path": "/home/thiago/Desktop/SCC/PRACTICAL/LAB3/SCC_EBay",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
@@ -91,7 +117,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665748059278</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="working 2">
+      <created>1665748167682</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1665748167682</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -117,6 +150,7 @@
     <MESSAGE value="first steps 3" />
     <MESSAGE value="first steps 4" />
     <MESSAGE value="working" />
-    <option name="LAST_COMMIT_MESSAGE" value="working" />
+    <MESSAGE value="working 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="working 2" />
   </component>
 </project>
