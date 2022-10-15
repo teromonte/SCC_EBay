@@ -1,4 +1,4 @@
-package main.java.data.DAO;
+package main.java.models.DAO;
 
 public class QuestionDAO {
 }

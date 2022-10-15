@@ -4,27 +4,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b469088-9480-470d-bb72-0267c4b9bd8d" name="Changes" comment="working 2">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/data/DAO/AuctionDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/data/DAO/BidDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/data/DAO/QuestionDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/data/models/Auction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/data/models/Bid.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/data/models/Question.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/data/models/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/srv/resources/AuctionResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/srv/resources/UserResource.java" afterDir="false" />
+    <list default="true" id="1b469088-9480-470d-bb72-0267c4b9bd8d" name="Changes" comment="Added Models and DAOs and Resources">
+      <change afterPath="$PROJECT_DIR$/src/main/java/DAL/gateway/IAuctionGateway.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DAL/gateway/IMediaGateway.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DAL/gateway/IUserGateway.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DAL/repository/AuctionRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DAL/repository/MediaRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/DAL/repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/models/DAO/BidDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/models/entities/Auction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/models/entities/Bid.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/models/entities/Question.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/resources/AuctionResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/resources/UserResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/EBay_logo.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/CosmosDBLayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/CosmosDBLayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/data/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/DAO/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/srv/ControlResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/srv/resources/ControlResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/CosmosDBLayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAL/CosmosDBLayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/DAO/AuctionDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/DAO/AuctionDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/DAO/BidDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/DAO/QuestionDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/DAO/QuestionDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/DAO/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/DAO/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/models/Auction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/models/Bid.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/models/Question.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/entities/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/srv/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/srv/MainApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/srv/MediaResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/srv/resources/MediaResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/srv/resources/AuctionResource.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/srv/resources/ControlResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/resources/ControlResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/srv/resources/MediaResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/resources/MediaResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/srv/resources/UserResource.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utils/TestUsers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/TestUsers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/UploadToStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/UploadToStorage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +43,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -55,7 +65,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "/home/thiago/Desktop/SCC/PRACTICAL/LAB3/SCC_EBay",
+    "last_opened_file_path": "/home/thiago/Desktop/SCC/PRACTICAL/LAB3/SCC_EBay/src/main/resources",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0"
@@ -63,11 +73,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/test" />
       <recent name="$PROJECT_DIR$/src/main/java/utils" />
       <recent name="$PROJECT_DIR$/src/main/java/data" />
-      <recent name="$PROJECT_DIR$/src/main/java/srv" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="utils" />
@@ -124,7 +134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665748167682</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added Models and DAOs and Resources">
+      <created>1665831829378</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1665831829378</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -151,6 +168,8 @@
     <MESSAGE value="first steps 4" />
     <MESSAGE value="working" />
     <MESSAGE value="working 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="working 2" />
+    <MESSAGE value="working 3" />
+    <MESSAGE value="Added Models and DAOs and Resources" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Models and DAOs and Resources" />
   </component>
 </project>

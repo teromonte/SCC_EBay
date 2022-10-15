@@ -1,4 +1,4 @@
-package main.java.srv.resources;
+package main.java.resources;
 
 import com.azure.core.util.BinaryData;
 import com.azure.storage.blob.BlobClient;

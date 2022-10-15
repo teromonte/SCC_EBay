@@ -1,4 +1,4 @@
-package main.java.data.models;
+package main.java.models.entities;
 
 import java.util.Arrays;
 
