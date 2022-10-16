@@ -1,4 +1,4 @@
-package main.java.business;
+package main.java.business.user;
 
 import com.azure.cosmos.models.CosmosItemResponse;
 import main.java.DAL.gateway.IUserGateway;

@@ -1,4 +1,4 @@
-package main.java.resources;
+package main.java.srv.resources;
 
 import com.azure.core.util.BinaryData;
 import com.azure.storage.blob.BlobClient;
@@ -41,7 +41,8 @@ public class MediaResource {
         BinaryData data = BinaryData.fromBytes(b);
 
         // Get container client
-        BlobContainerClient containerClient = new BlobContainerClientBuilder().connectionString(storageConnectionString).containerName("images").buildClient();
+        BlobContainerClient containerClient = new BlobContainerClientBuilder()
+                .connectionString(storageConnectionString).containerName("images").buildClient();
 
         String key = Hash.of(b);
         map.put( key, b);
@@ -62,7 +63,8 @@ public class MediaResource {
     @Path("/{id}")
     @Produces(MediaType.APPLICATION_OCTET_STREAM)
     public byte[] download(@PathParam("id") String id) {
-        BlobContainerClient containerClient = new BlobContainerClientBuilder().connectionString(storageConnectionString).containerName("images").buildClient();
+        BlobContainerClient containerClient = new BlobContainerClientBuilder()
+                .connectionString(storageConnectionString).containerName("images").buildClient();
 
         // Get client to blob
         BlobClient blob = containerClient.getBlobClient(id);

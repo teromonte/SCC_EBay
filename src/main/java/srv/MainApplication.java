@@ -1,10 +1,10 @@
 package main.java.srv;
 
 import jakarta.ws.rs.core.Application;
-import main.java.resources.AuctionResource;
-import main.java.resources.ControlResource;
-import main.java.resources.MediaResource;
-import main.java.resources.UserResource;
+import main.java.srv.resources.AuctionResource;
+import main.java.srv.resources.ControlResource;
+import main.java.srv.resources.MediaResource;
+import main.java.srv.resources.UserResource;
 
 import java.util.HashSet;
 import java.util.Set;

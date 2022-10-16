@@ -9,13 +9,17 @@ public class QuestionDAO {
     private String auction;
     private String user;
     private String text;
+    private String reply;
 
-    public QuestionDAO(String id, String auction, String user, String text) {
+
+    public QuestionDAO(String id, String auction, String user, String text, String reply) {
         super();
         this.id = id;
         this.auction = auction;
         this.user = user;
         this.text = text;
+        this.reply = reply;
+
     }
 
     public QuestionDAO() {
@@ -23,11 +27,11 @@ public class QuestionDAO {
     }
 
     public QuestionDAO(Question question) {
-        this(question.getId(), question.getAuction(), question.getText(), question.getUser());
+        this(question.getId(), question.getAuction(), question.getText(), question.getUser(), question.getReply());
     }
 
     public Question toQuestion() {
-        return new Question(id, auction, user, text);
+        return new Question(id, auction, user, text, reply);
     }
 
     public String get_rid() {
@@ -38,9 +42,17 @@ public class QuestionDAO {
         this._rid = _rid;
     }
 
+    public String getReply() {
+        return reply;
+    }
+
+    public void setReply(String reply) {
+        this.reply = reply;
+    }
+
     @Override
     public String toString() {
-        return "QuestionDAO{" + "_rid='" + _rid + '\'' + ", _ts='" + _ts + '\'' + ", id='" + id + '\'' + ", auction='" + auction + '\'' + ", user='" + user + '\'' + ", text='" + text + '\'' + '}';
+        return "QuestionDAO{" + "_rid='" + _rid + '\'' + ", _ts='" + _ts + '\'' + ", id='" + id + '\'' + ", auction='" + auction + '\'' + ", user='" + user + '\'' + ", text='" + text + '\'' + ", reply='" + reply + '\'' + '}';
     }
 
     public String get_ts() {

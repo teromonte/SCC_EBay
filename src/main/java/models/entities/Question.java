@@ -5,21 +5,31 @@ public class Question {
     private String auction;
     private String user;
     private String text;
+    private String reply;
 
     public Question() {
         super();
     }
 
-    public Question(String id, String auction, String user, String text) {
+    public Question(String id, String auction, String user, String text, String reply) {
         this.id = id;
         this.auction = auction;
         this.user = user;
         this.text = text;
+        this.reply = reply;
+    }
+
+    public String getReply() {
+        return reply;
+    }
+
+    public void setReply(String reply) {
+        this.reply = reply;
     }
 
     @Override
     public String toString() {
-        return "Question{" + "id='" + id + '\'' + ", auction='" + auction + '\'' + ", user='" + user + '\'' + ", text='" + text + '\'' + '}';
+        return "Question{" + "id='" + id + '\'' + ", auction='" + auction + '\'' + ", user='" + user + '\'' + ", text='" + text + '\'' + ", reply='" + reply + '\'' + '}';
     }
 
     public String getId() {

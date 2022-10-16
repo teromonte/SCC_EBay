@@ -1,7 +1,11 @@
 package main.java.DAL.gateway;
 
-import main.java.models.entities.Bid;
+import com.azure.cosmos.models.CosmosItemResponse;
+import com.azure.cosmos.util.CosmosPagedIterable;
+import main.java.models.DAO.AuctionDAO;
 
 public interface IAuctionGateway {
-    public void placeBid(Bid bid);
+    public CosmosItemResponse<AuctionDAO> putAuction(AuctionDAO auction);
+
+    public CosmosPagedIterable<AuctionDAO> getAuctionById(String id);
 }

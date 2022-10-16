@@ -15,8 +15,7 @@ public class UserRepository implements IUserGateway {
     public UserRepository() {
     }
 
-    private CosmosContainer getContainer()
-    {
+    private CosmosContainer getContainer() {
         CosmosDBLayer db = CosmosDBLayer.getInstance();
         db.init(CosmosDBLayer.USER_CONTAINER);
         return db.getContainer();
@@ -24,9 +23,7 @@ public class UserRepository implements IUserGateway {
 
     @Override
     public CosmosItemResponse<Object> delUserById(String id) {
-
         CosmosContainer users = getContainer();
-
         PartitionKey key = new PartitionKey(id);
         return users.deleteItem(id, key, new CosmosItemRequestOptions());
     }
@@ -34,24 +31,27 @@ public class UserRepository implements IUserGateway {
     @Override
     public CosmosItemResponse<UserDAO> putUser(UserDAO user) {
         CosmosContainer users = getContainer();
+        var u = getUserById(user.getId());
+        if (u == null) {
+            String id = "0:" + System.currentTimeMillis();
+            user.setId(id);
+            return users.createItem(user);
+        } else {
+            PartitionKey key = new PartitionKey(user.getId());
+            return users.replaceItem(user, user.getId(), key, new CosmosItemRequestOptions());
+        }
 
-        String id = "0:" + System.currentTimeMillis();
-        user.setId(id);
-
-        return users.createItem(user);
     }
 
     @Override
     public CosmosPagedIterable<UserDAO> getUserById(String id) {
         CosmosContainer users = getContainer();
-
         return users.queryItems("SELECT * FROM users WHERE users.id=\"" + id + "\"", new CosmosQueryRequestOptions(), UserDAO.class);
     }
 
     @Override
     public CosmosPagedIterable<UserDAO> getUsers() {
         CosmosContainer users = getContainer();
-
         return users.queryItems("SELECT * FROM users ", new CosmosQueryRequestOptions(), UserDAO.class);
     }
 }
