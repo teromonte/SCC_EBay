@@ -1,9 +1,12 @@
 package main.java.resources;
 
+import com.azure.cosmos.models.CosmosItemResponse;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
+import main.java.business.AddUserUseCase;
+import main.java.models.DAO.UserDAO;
 import main.java.models.entities.User;
 
 /**
@@ -16,9 +19,9 @@ public class UserResource {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public String addUser(User user) throws JsonProcessingException {
-        ObjectMapper mapper = new ObjectMapper();
-        return mapper.writeValueAsString(user);
+    public String addUser(User user) {
+        AddUserUseCase userUseCase = new AddUserUseCase();
+        return userUseCase.addUser(user).toString();
     }
 
     @Path("/{id}")

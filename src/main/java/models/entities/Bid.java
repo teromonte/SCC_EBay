@@ -6,6 +6,10 @@ public class Bid {
     private String user;
     private String value;
 
+    public Bid() {
+        super();
+    }
+
     public Bid(String id, String auction, String user, String value) {
         this.id = id;
         this.auction = auction;

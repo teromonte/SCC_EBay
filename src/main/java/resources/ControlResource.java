@@ -20,7 +20,7 @@ public class ControlResource
 	@GET
 	@Produces(MediaType.TEXT_PLAIN)
 	public String hello() {
-		return "v: Projeto SCC v1";
+		return "v: Projeto SCC v2";
 	}
 
 }

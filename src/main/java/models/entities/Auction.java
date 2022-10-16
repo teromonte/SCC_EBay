@@ -11,6 +11,10 @@ public class Auction {
     private String winnerBid;
     private String status;
 
+    public Auction() {
+        super();
+    }
+
     public Auction(String id, String title, String description, String image, String owner, String endTime, String minimumPrice, String winnerBid, String status) {
         this.id = id;
         this.title = title;

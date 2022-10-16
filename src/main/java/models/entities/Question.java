@@ -6,6 +6,10 @@ public class Question {
     private String user;
     private String text;
 
+    public Question() {
+        super();
+    }
+
     public Question(String id, String auction, String user, String text) {
         this.id = id;
         this.auction = auction;

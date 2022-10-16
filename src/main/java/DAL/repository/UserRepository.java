@@ -12,6 +12,9 @@ import main.java.models.DAO.UserDAO;
 
 public class UserRepository implements IUserGateway {
 
+    public UserRepository() {
+    }
+
     private CosmosContainer getContainer()
     {
         CosmosDBLayer db = CosmosDBLayer.getInstance();

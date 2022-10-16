@@ -10,6 +10,10 @@ public class User {
     private String pwd;
     private String photoId;
 
+    public User() {
+        super();
+    }
+
     public User(String id, String name, String nickname, String pwd, String photoId) {
         super();
         this.id = id;
@@ -17,6 +21,11 @@ public class User {
         this.nickname = nickname;
         this.pwd = pwd;
         this.photoId = photoId;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" + "id='" + id + '\'' + ", name='" + name + '\'' + ", nickname='" + nickname + '\'' + ", pwd='" + pwd + '\'' + ", photoId='" + photoId + '\'' + '}';
     }
 
     public String getId() {
@@ -59,8 +68,4 @@ public class User {
         this.photoId = photoId;
     }
 
-    @Override
-    public String toString() {
-        return "User{" + "id='" + id + '\'' + ", name='" + name + '\'' + ", nickname='" + nickname + '\'' + ", pwd='" + pwd + '\'' + ", photoId='" + photoId + '\'' + '}';
-    }
 }
