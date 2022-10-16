@@ -4,18 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b469088-9480-470d-bb72-0267c4b9bd8d" name="Changes" comment="Bids, Auctions implemented">
-      <change afterPath="$PROJECT_DIR$/src/main/java/business/question/AddQuestionUseCase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/business/question/ListQuestionsUseCase.java" afterDir="false" />
+    <list default="true" id="1b469088-9480-470d-bb72-0267c4b9bd8d" name="Changes" comment="Questions + refactor">
+      <change afterPath="$PROJECT_DIR$/src/main/java/DAL/BlobStorageLayer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/business/media/DownloadMediaUseCase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/business/media/UploadMediaUseCase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAL/gateway/IBidGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAL/gateway/IBidGateway.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAL/gateway/IQuestionGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAL/gateway/IQuestionGateway.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAL/repository/BidRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAL/repository/BidRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAL/repository/QuestionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAL/repository/QuestionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/business/bid/AddBidUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/bid/AddBidUseCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/srv/resources/AuctionResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/srv/resources/AuctionResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAL/CosmosDBLayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAL/CosmosDBLayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/srv/resources/MediaResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/srv/resources/MediaResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/srv/resources/UserResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/srv/resources/UserResource.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,7 +191,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665927208422</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Questions + refactor">
+      <created>1665932098265</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1665932098265</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -232,6 +234,7 @@
     <MESSAGE value="icon file" />
     <MESSAGE value="addUser working" />
     <MESSAGE value="Bids, Auctions implemented" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bids, Auctions implemented" />
+    <MESSAGE value="Questions + refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Questions + refactor" />
   </component>
 </project>
