@@ -9,7 +9,7 @@ import main.java.business.user.GetUserByIDUseCase;
 import main.java.models.entities.User;
 
 /**
- * Class with control endpoints.
+ * Class with user endpoints.
  */
 @Path("/user")
 public class UserResource {

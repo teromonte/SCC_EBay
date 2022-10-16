@@ -13,8 +13,8 @@ public class AddBidUseCase {
         bidGateway = new BidRepository();
     }
 
-    public CosmosItemResponse<BidDAO> addBid(Bid bid) {
+    public CosmosItemResponse<BidDAO> addBid(Bid bid, String auctionID) {
         BidDAO bidDAO = new BidDAO(bid);
-        return bidGateway.addBid(bidDAO);
+        return bidGateway.addBid(bidDAO, auctionID);
     }
 }

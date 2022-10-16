@@ -19,7 +19,7 @@ import java.util.Map;
 @Path("/media")
 public class MediaResource {
 
-    Map<String,byte[]> map = new HashMap<String,byte[]>();
+    Map<String, byte[]> map = new HashMap<String, byte[]>();
 
     // Get connection string in the storage access keys page
     String storageConnectionString = "DefaultEndpointsProtocol=https;AccountName=scc55355;AccountKey=J8BcD9IJTwSh1kSa44roaJE+gKm35jfVa3XKhMOAfUWEGS/jejmrFiEk+vcjIy8MkWOkoJImSsD4+AStKIUkCw==;EndpointSuffix=core.windows.net";
@@ -35,17 +35,16 @@ public class MediaResource {
 
         byte[] b = contents.readAllBytes();
 
-        if(b.length==0){
+        if (b.length == 0) {
             return "error";
         }
         BinaryData data = BinaryData.fromBytes(b);
 
         // Get container client
-        BlobContainerClient containerClient = new BlobContainerClientBuilder()
-                .connectionString(storageConnectionString).containerName("images").buildClient();
+        BlobContainerClient containerClient = new BlobContainerClientBuilder().connectionString(storageConnectionString).containerName("images").buildClient();
 
         String key = Hash.of(b);
-        map.put( key, b);
+        map.put(key, b);
 
         BlobClient blob = containerClient.getBlobClient(key);
 
@@ -63,8 +62,7 @@ public class MediaResource {
     @Path("/{id}")
     @Produces(MediaType.APPLICATION_OCTET_STREAM)
     public byte[] download(@PathParam("id") String id) {
-        BlobContainerClient containerClient = new BlobContainerClientBuilder()
-                .connectionString(storageConnectionString).containerName("images").buildClient();
+        BlobContainerClient containerClient = new BlobContainerClientBuilder().connectionString(storageConnectionString).containerName("images").buildClient();
 
         // Get client to blob
         BlobClient blob = containerClient.getBlobClient(id);

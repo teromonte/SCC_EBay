@@ -4,28 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b469088-9480-470d-bb72-0267c4b9bd8d" name="Changes" comment="addUser working">
-      <change afterPath="$PROJECT_DIR$/src/main/java/business/auction/AddAuctionUseCase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/business/bid/AddBidUseCase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/business/bid/ListBidsUseCase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/business/user/DeleteUserByIDUseCase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/business/user/GetUserByIDUseCase.java" afterDir="false" />
+    <list default="true" id="1b469088-9480-470d-bb72-0267c4b9bd8d" name="Changes" comment="Bids, Auctions implemented">
+      <change afterPath="$PROJECT_DIR$/src/main/java/business/question/AddQuestionUseCase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/business/question/ListQuestionsUseCase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAL/gateway/IAuctionGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAL/gateway/IAuctionGateway.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DAL/gateway/IBidGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAL/gateway/IBidGateway.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAL/repository/AuctionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAL/repository/AuctionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAL/gateway/IQuestionGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAL/gateway/IQuestionGateway.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DAL/repository/BidRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAL/repository/BidRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAL/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAL/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/business/AddUserUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/user/AddUserUseCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/DAO/QuestionDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/DAO/QuestionDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/entities/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/entities/Question.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/resources/AuctionResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/srv/resources/AuctionResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/resources/ControlResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/srv/resources/ControlResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/resources/MediaResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/srv/resources/MediaResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/resources/UserResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/srv/resources/UserResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/srv/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/srv/MainApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/Hash.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/Hash.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/TestUsers.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAL/repository/QuestionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAL/repository/QuestionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/business/bid/AddBidUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/bid/AddBidUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/srv/resources/AuctionResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/srv/resources/AuctionResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/srv/resources/MediaResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/srv/resources/MediaResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/srv/resources/UserResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/srv/resources/UserResource.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,7 +189,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665910928567</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Bids, Auctions implemented">
+      <created>1665927208422</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1665927208422</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -234,6 +231,7 @@
     <MESSAGE value="begin of user data" />
     <MESSAGE value="icon file" />
     <MESSAGE value="addUser working" />
-    <option name="LAST_COMMIT_MESSAGE" value="addUser working" />
+    <MESSAGE value="Bids, Auctions implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bids, Auctions implemented" />
   </component>
 </project>

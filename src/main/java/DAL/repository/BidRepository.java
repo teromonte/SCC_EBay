@@ -26,10 +26,10 @@ public class BidRepository implements IBidGateway {
     }
 
     @Override
-    public CosmosItemResponse<BidDAO> addBid(BidDAO bid) {
+    public CosmosItemResponse<BidDAO> addBid(BidDAO bidDAO, String auctionID) {
         CosmosContainer bids = getContainer();
         String id = "0:" + System.currentTimeMillis();
-        bid.setId(id);
-        return bids.createItem(bid);
+        bidDAO.setId(id);
+        return bids.createItem(bidDAO);
     }
 }
