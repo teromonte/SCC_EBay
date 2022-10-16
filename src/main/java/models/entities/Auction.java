@@ -1,15 +1,15 @@
 package main.java.models.entities;
 
 public class Auction {
-    private String id;
+    private String id; // code
     private String title;
     private String description;
     private String image;
     private String owner;
-    private String endTime;
+    private String endTime; // code
     private String minimumPrice;
     private String winnerBid;
-    private String status;
+    private String status; // code
 
     public Auction() {
         super();

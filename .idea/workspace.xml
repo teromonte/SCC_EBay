@@ -4,11 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b469088-9480-470d-bb72-0267c4b9bd8d" name="Changes" comment="Media upload and download">
+    <list default="true" id="1b469088-9480-470d-bb72-0267c4b9bd8d" name="Changes" comment="Media resource done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAL/BlobStorageLayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAL/BlobStorageLayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/business/media/UploadMediaUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/media/UploadMediaUseCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/srv/resources/MediaResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/srv/resources/MediaResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/business/auction/AddAuctionUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/auction/AddAuctionUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/business/bid/AddBidUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/bid/AddBidUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/business/question/AddQuestionUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/question/AddQuestionUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/entities/Auction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/entities/Auction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/entities/Bid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/entities/Bid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/entities/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/entities/Question.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/srv/resources/UserResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/srv/resources/UserResource.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +26,7 @@
         <option value="Interface" />
         <option value="package-info" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -203,7 +209,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665935998380</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Media resource done">
+      <created>1665943302271</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1665943302271</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -241,6 +254,7 @@
     <MESSAGE value="Bids, Auctions implemented" />
     <MESSAGE value="Questions + refactor" />
     <MESSAGE value="Media upload and download" />
-    <option name="LAST_COMMIT_MESSAGE" value="Media upload and download" />
+    <MESSAGE value="Media resource done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Media resource done" />
   </component>
 </project>

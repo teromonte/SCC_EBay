@@ -4,7 +4,7 @@ package main.java.models.entities;
  * Represents a User, as returned to the clients
  */
 public class User {
-    private String id;
+    private String id; // code
     private String name;
     private String nickname;
     private String pwd;

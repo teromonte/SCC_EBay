@@ -1,8 +1,8 @@
 package main.java.models.entities;
 
 public class Question {
-    private String id;
-    private String auction;
+    private String id; // code
+    private String auction; // code
     private String user;
     private String text;
     private String reply;
