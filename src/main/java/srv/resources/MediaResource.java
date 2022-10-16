@@ -5,9 +5,6 @@ import jakarta.ws.rs.core.MediaType;
 import main.java.business.media.DownloadMediaUseCase;
 import main.java.business.media.UploadMediaUseCase;
 
-import java.io.IOException;
-import java.io.InputStream;
-
 /**
  * Resource for managing media files, such as images.
  */
@@ -21,9 +18,9 @@ public class MediaResource {
     @Path("/")
     @Consumes(MediaType.APPLICATION_OCTET_STREAM)
     @Produces(MediaType.APPLICATION_JSON)
-    public String upload(InputStream contents) throws IOException {
+    public String upload(byte[] contents) {
         UploadMediaUseCase uploadMediaUseCase = new UploadMediaUseCase();
-        return uploadMediaUseCase.uploadMedia(contents.readAllBytes());
+        return uploadMediaUseCase.uploadMedia(contents);
     }
 
     /**

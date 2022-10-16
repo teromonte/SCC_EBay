@@ -5,15 +5,18 @@ import main.java.DAL.BlobStorageLayer;
 import main.java.utils.Hash;
 
 public class UploadMediaUseCase {
+    private static final String IMAGE_FORMAT_NAME = ".jpeg";
+
     BlobStorageLayer blobStorageLayer;
 
     public UploadMediaUseCase() {
         blobStorageLayer = new BlobStorageLayer();
     }
 
-    public String uploadMedia(byte[] data) {
-        String blobID = Hash.of(data);
-        BinaryData binaryData = BinaryData.fromBytes(data);
+    public String uploadMedia(byte[] contents) {
+        BinaryData binaryData = BinaryData.fromBytes(contents);
+        String blobID = Hash.of(contents);
+        blobID = blobID.concat(IMAGE_FORMAT_NAME);
         return blobStorageLayer.upload(blobID, binaryData);
     }
 }
