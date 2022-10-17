@@ -3,6 +3,7 @@ package main.java.srv.resources;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import main.java.business.auction.AddAuctionUseCase;
+import main.java.business.auction.ListAuctionsAboutToCloseUseCase;
 import main.java.business.bid.AddBidUseCase;
 import main.java.business.bid.ListBidsUseCase;
 import main.java.business.question.AddQuestionUseCase;
@@ -23,6 +24,22 @@ public class AuctionResource {
     public String addAuction(Auction auction) {
         AddAuctionUseCase auctionUseCase = new AddAuctionUseCase();
         return auctionUseCase.addAuction(auction).getItem().toString();
+    }
+
+    @Path("/listAuctionsAboutToClose")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public String listAuctionsAboutToClose() {
+        ListAuctionsAboutToCloseUseCase listAuctionsAboutToCloseUseCase = new ListAuctionsAboutToCloseUseCase();
+        return listAuctionsAboutToCloseUseCase.listAuctionsAboutToClose().stream().toList().toString();
+    }
+
+    @Path("/{userID}/listAuctionsFromUser")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public String listAuctionsFromUser(@PathParam("userID") String userID) {
+        ListAuctionsAboutToCloseUseCase listAuctionsAboutToCloseUseCase = new ListAuctionsAboutToCloseUseCase();
+        return listAuctionsAboutToCloseUseCase.listAuctionsAboutToClose().stream().toList().toString();
     }
 
     @Path("/{auctionID}/bid")

@@ -7,7 +7,6 @@ import main.java.business.user.AddUserUseCase;
 import main.java.business.user.DeleteUserByIDUseCase;
 import main.java.business.user.GetUserByIDUseCase;
 import main.java.models.entities.User;
-import main.java.utils.Enums;
 
 /**
  * Class with user endpoints.

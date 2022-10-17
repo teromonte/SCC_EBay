@@ -11,8 +11,11 @@ import main.java.DAL.gateway.IAuctionGateway;
 import main.java.models.DAO.AuctionDAO;
 
 public class AuctionRepository implements IAuctionGateway {
-    //        PartitionKey key = new PartitionKey(id);
+
+    private CosmosContainer auctions;
+
     public AuctionRepository() {
+        auctions = getContainer();
     }
 
     private CosmosContainer getContainer() {
@@ -23,7 +26,6 @@ public class AuctionRepository implements IAuctionGateway {
 
     @Override
     public CosmosItemResponse<AuctionDAO> putAuction(AuctionDAO auction) {
-        CosmosContainer auctions = getContainer();
         var u = getAuctionById(auction.getId());
         if (u == null) {
             String id = "0:" + System.currentTimeMillis();
@@ -37,8 +39,17 @@ public class AuctionRepository implements IAuctionGateway {
 
     @Override
     public CosmosPagedIterable<AuctionDAO> getAuctionById(String id) {
-        CosmosContainer auctions = getContainer();
-        return auctions.queryItems("SELECT * FROM auction WHERE auctions.id=\"" + id + "\"", new CosmosQueryRequestOptions(), AuctionDAO.class);
+        return auctions.queryItems("SELECT * FROM auctions WHERE auctions.id=\"" + id + "\"", new CosmosQueryRequestOptions(), AuctionDAO.class);
+    }
+
+    @Override
+    public CosmosPagedIterable<AuctionDAO> listAuctionsAboutToClose() {
+        return auctions.queryItems("SELECT * FROM auctions", new CosmosQueryRequestOptions(), AuctionDAO.class);
+    }
+
+    @Override
+    public CosmosPagedIterable<AuctionDAO> listAuctionsFromUser(String userID) {
+        return auctions.queryItems("SELECT * FROM auctions WHERE auctions.owner=\"" + userID + "\"", new CosmosQueryRequestOptions(), AuctionDAO.class);
     }
 }
 

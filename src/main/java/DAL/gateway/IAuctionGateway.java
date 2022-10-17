@@ -8,4 +8,8 @@ public interface IAuctionGateway {
     public CosmosItemResponse<AuctionDAO> putAuction(AuctionDAO auction);
 
     public CosmosPagedIterable<AuctionDAO> getAuctionById(String id);
+
+    public CosmosPagedIterable<AuctionDAO> listAuctionsAboutToClose();
+
+    public CosmosPagedIterable<AuctionDAO> listAuctionsFromUser(String userID);
 }
