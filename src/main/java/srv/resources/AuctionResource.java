@@ -34,7 +34,7 @@ public class AuctionResource {
         return listAuctionsAboutToCloseUseCase.listAuctionsAboutToClose().stream().toList().toString();
     }
 
-    @Path("/{userID}/listAuctionsFromUser")
+    @Path("/listAuctionsFromUser/{userID}")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public String listAuctionsFromUser(@PathParam("userID") String userID) {
