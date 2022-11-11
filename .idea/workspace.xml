@@ -4,9 +4,54 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b469088-9480-470d-bb72-0267c4b9bd8d" name="Changes" comment="listAuctionsFromUser and listAuctionsAboutToClose">
+    <list default="true" id="1b469088-9480-470d-bb72-0267c4b9bd8d" name="Changes" comment="FIX">
+      <change afterPath="$PROJECT_DIR$/src/main/java/models/DAO/LoginDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/models/entities/Login.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/srv/resources/AuctionResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/srv/resources/AuctionResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TP1-22-23-v1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/create-users.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/create-users.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.1.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/images/cats.1.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.10.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/images/cats.10.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.11.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/images/cats.11.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.12.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/images/cats.12.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.13.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/images/cats.13.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.14.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/images/cats.14.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.15.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/images/cats.15.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.16.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/images/cats.16.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.17.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/images/cats.17.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.18.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/images/cats.18.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.19.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/images/cats.19.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.2.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/images/cats.2.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.20.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/images/cats.20.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.21.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/images/cats.21.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.22.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/images/cats.22.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.23.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/images/cats.23.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.24.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/images/cats.24.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.25.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/images/cats.25.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.26.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/images/cats.26.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.27.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/images/cats.27.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.28.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/images/cats.28.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.29.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/images/cats.29.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.3.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/images/cats.3.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.30.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/images/cats.30.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.31.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/images/cats.31.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.32.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/images/cats.32.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.33.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/images/cats.33.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.34.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/images/cats.34.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.35.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/images/cats.35.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.36.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/images/cats.36.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.37.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/images/cats.37.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.38.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/images/cats.38.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.39.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/images/cats.39.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.4.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/images/cats.4.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.40.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/images/cats.40.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.41.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/images/cats.41.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.5.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/images/cats.5.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.6.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/images/cats.6.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.7.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/images/cats.7.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.8.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/images/cats.8.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.9.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/images/cats.9.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/test-utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/test-utils.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,6 +118,39 @@
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="utils" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
+      <option name="appName" />
+      <option name="appServicePlanName" />
+      <option name="appServicePlanResourceGroup" />
+      <option name="appSettingsKey" value="92b87574-d84d-4df4-9764-8291e9cff5ef" />
+      <option name="artifact" />
+      <option name="autoPort" value="true" />
+      <option name="debugOptions" />
+      <option name="deployment" />
+      <option name="deploymentStagingDirectoryPath" />
+      <option name="funcPath" />
+      <option name="funcPort" value="0" />
+      <option name="hostJsonPath" />
+      <option name="insightsName" />
+      <option name="instrumentationKey" />
+      <option name="javaVersion" />
+      <option name="localSettingsJsonPath" />
+      <option name="moduleName" />
+      <option name="os" />
+      <option name="pricingTier" />
+      <option name="providerMap">
+        <map />
+      </option>
+      <option name="region" />
+      <option name="resourceGroup" />
+      <option name="stagingFolder" />
+      <option name="subscription" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
