@@ -4,21 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b469088-9480-470d-bb72-0267c4b9bd8d" name="Changes" comment="Beginning of testing">
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/CheckCookieUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/RedisLayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/Session.java" afterDir="false" />
+    <list default="true" id="1b469088-9480-470d-bb72-0267c4b9bd8d" name="Changes" comment="authentication + preparation for tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/business/auction/AddAuctionUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/auction/AddAuctionUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/business/bid/AddBidUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/bid/AddBidUseCase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/models/DAO/AuctionDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/DAO/AuctionDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/DAO/BidDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/DAO/BidDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/DAO/LoginDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/DAO/LoginDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/DAO/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/DAO/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/entities/Bid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/entities/Bid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/entities/Auction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/entities/Auction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/models/entities/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/entities/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/srv/resources/UserResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/srv/resources/UserResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/README" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/README" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -275,7 +267,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668170037123</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="authentication + preparation for tests">
+      <created>1668421951442</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1668421951442</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -317,6 +316,7 @@
     <MESSAGE value="starting implementing restrictions" />
     <MESSAGE value="listAuctionsFromUser and listAuctionsAboutToClose" />
     <MESSAGE value="Beginning of testing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Beginning of testing" />
+    <MESSAGE value="authentication + preparation for tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="authentication + preparation for tests" />
   </component>
 </project>

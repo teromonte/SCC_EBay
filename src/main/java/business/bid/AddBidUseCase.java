@@ -20,9 +20,9 @@ public class AddBidUseCase {
 		
         BidDAO bidDAO = new BidDAO(bid);
         AuctionDAO auction = auctionGateway.getAuctionById(auctionID).stream().findFirst().get();
-        LocalDateTime endtime = LocalDateTime.parse(auction.getEndTime());
-        LocalDateTime now = LocalDateTime.now();
-        if(now.isAfter(endtime)) {
+        Date endtime = auction.getEndTime();
+        Date now = new Date(System.currentTimeMillis());
+        if(endtime.before(now)) {
 
         } else {
             return bidGateway.addBid(bidDAO, auctionID);

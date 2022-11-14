@@ -1,6 +1,7 @@
 package main.java.models.DAO;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import main.java.models.entities.Auction;
 import main.java.models.entities.Bid;
 
 import java.util.Date;
@@ -27,6 +28,14 @@ public class AuctionDAO {
         this.endTime = endTime;
         this.minimumPrice = minimumPrice;
         this.bid = bid;
+    }
+
+    public AuctionDAO() {
+
+    }
+
+    public AuctionDAO(Auction auction) {
+        this(auction.getId(),auction.getTitle(),auction.getDescription(),auction.getImage(),auction.getOwner(),auction.getEndTime(),auction.getMinimumPrice(),auction.getWinnerBid() );
     }
 
     @Override

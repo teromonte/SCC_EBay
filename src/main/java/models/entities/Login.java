@@ -9,6 +9,10 @@ public class Login {
         this.pwd = pwd;
     }
 
+    public Login() {
+        super();
+    }
+
     @Override
     public String toString() {
         return "Login{" + "user='" + user + '\'' + ", pwd='" + pwd + '\'' + '}';

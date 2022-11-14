@@ -7,13 +7,16 @@ import main.java.models.DAO.AuctionDAO;
 import main.java.models.entities.Auction;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 
 public class AddAuctionUseCase {
 
     public static CosmosItemResponse<AuctionDAO> addAuction(Auction auction) {
 		IAuctionGateway auctionGateway = new AuctionRepository();
         AuctionDAO auctionDAO = new AuctionDAO(auction);
-        auctionDAO.setEndTime(LocalDateTime.now().plusHours(2).toString());
+        Date dt = new Date();
+        LocalDateTime.from(dt.toInstant()).plusDays(1);
+        auctionDAO.setEndTime(dt);
         return auctionGateway.putAuction(auctionDAO);
     }
 }
