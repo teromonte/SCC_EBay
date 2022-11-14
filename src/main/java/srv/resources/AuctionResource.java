@@ -2,6 +2,7 @@ package main.java.srv.resources;
 
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
+import java.util.List;
 import main.java.business.auction.AddAuctionUseCase;
 import main.java.business.auction.ListAuctionsAboutToCloseUseCase;
 import main.java.business.auction.ListAuctionsFromUserUseCase;
@@ -32,6 +33,10 @@ public class AuctionResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public String listAuctionsAboutToClose() {
+		List<String> res = ListAuctionsAboutToCloseUseCase
+		.cacheListAuctionsAboutToClose();
+		if(res != null)
+			return res.toString();
         return ListAuctionsAboutToCloseUseCase
 		.listAuctionsAboutToClose()
 		.stream().toList().toString();
@@ -60,6 +65,10 @@ public class AuctionResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public String listBid(@PathParam("auctionID") String auctionID) {
+		List<String> res = ListBidsUseCase
+		.cacheListBids(auctionID);
+		if(res != null)
+			return res.toString();
         return ListBidsUseCase
 		.listBids(auctionID)
 		.stream().toList().toString();
@@ -69,6 +78,10 @@ public class AuctionResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public String listQuestion(@PathParam("auctionID") String auctionID) {
+		List<String> res = ListQuestionsUseCase
+		.cacheListQuestions(auctionID);
+		if(res != null)
+			return res.toString();
         return ListQuestionsUseCase
 		.listQuestions(auctionID)
 		.stream().toList().toString();

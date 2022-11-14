@@ -25,7 +25,15 @@ public class BidRepository implements IBidGateway {
     @Override
     public CosmosPagedIterable<BidDAO> listBids(String auctionID) {
         CosmosContainer bids = getContainer();
-        return bids.queryItems("SELECT * FROM bids WHERE bids.auction=\"" + auctionID + "\"", new CosmosQueryRequestOptions(), BidDAO.class);
+		CosmosPagedIterable<BidDAO> pi = bids.queryItems("SELECT * FROM bids WHERE bids.auction=\"" + auctionID + "\"", new CosmosQueryRequestOptions(), BidDAO.class);
+		try (Jedis jedis = RedisLayer.getCachePool().getResource()) {
+			ObjectMapper mapper = new ObjectMapper();
+			for(BidDAO item : pi)
+			    jedis.rpush("bidL:" + auctionID, mapper.writeValueAsString(item));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+        return pi;
     }
 
     @Override

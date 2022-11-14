@@ -24,7 +24,15 @@ public class QuestionRepository implements IQuestionGateway {
     @Override
     public CosmosPagedIterable<QuestionDAO> listQuestions(String auctionID) {
         CosmosContainer questions = getContainer();
-        return questions.queryItems("SELECT * FROM questions WHERE questions.auction=\"" + auctionID + "\"", new CosmosQueryRequestOptions(), QuestionDAO.class);
+		CosmosPagedIterable<QuestionDAO> pi = questions.queryItems("SELECT * FROM questions WHERE questions.auction=\"" + auctionID + "\"", new CosmosQueryRequestOptions(), QuestionDAO.class);
+		try (Jedis jedis = RedisLayer.getCachePool().getResource()) {
+			ObjectMapper mapper = new ObjectMapper();
+			for(QuestionDAO item : pi)
+			    jedis.rpush("questionL:" + auctionID, mapper.writeValueAsString(item));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+        return pi;
     }
 
     @Override
