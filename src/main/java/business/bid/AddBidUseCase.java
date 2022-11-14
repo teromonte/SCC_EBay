@@ -13,18 +13,11 @@ import java.time.LocalDateTime;
 import java.util.Date;
 
 public class AddBidUseCase {
-    IBidGateway bidGateway;
 
-    IAuctionGateway auctionGateway;
-
-
-    public AddBidUseCase() {
-        bidGateway = new BidRepository();
-        auctionGateway = new AuctionRepository();
-
-    }
-
-    public CosmosItemResponse<BidDAO> addBid(Bid bid, String auctionID) {
+	public static CosmosItemResponse<BidDAO> addBid(Bid bid, String auctionID) {
+		IBidGateway bidGateway = new BidRepository();
+        IAuctionGateway auctionGateway = new AuctionRepository();
+		
         BidDAO bidDAO = new BidDAO(bid);
         AuctionDAO auction = auctionGateway.getAuctionById(auctionID).stream().findFirst().get();
         LocalDateTime endtime = LocalDateTime.parse(auction.getEndTime());

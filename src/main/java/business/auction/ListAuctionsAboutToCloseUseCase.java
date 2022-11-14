@@ -6,13 +6,9 @@ import main.java.DAL.repository.AuctionRepository;
 import main.java.models.DAO.AuctionDAO;
 
 public class ListAuctionsAboutToCloseUseCase {
-    IAuctionGateway auctionGateway;
 
-    public ListAuctionsAboutToCloseUseCase() {
-        auctionGateway = new AuctionRepository();
-    }
-
-    public CosmosPagedIterable<AuctionDAO> listAuctionsAboutToClose() {
+    public static CosmosPagedIterable<AuctionDAO> listAuctionsAboutToClose() {
+		IAuctionGateway auctionGateway = new AuctionRepository();
         return auctionGateway.listAuctionsAboutToClose();
     }
 }

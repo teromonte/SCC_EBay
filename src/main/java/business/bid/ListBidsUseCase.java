@@ -8,11 +8,9 @@ import main.java.models.DAO.BidDAO;
 import main.java.models.entities.Bid;
 
 public class ListBidsUseCase {
-    IBidGateway bidGateway;
-    public ListBidsUseCase() {
-        bidGateway = new BidRepository();
-    }
-    public CosmosPagedIterable<BidDAO> listBids(String auctionID) {
+
+    public static CosmosPagedIterable<BidDAO> listBids(String auctionID) {
+		IBidGateway bidGateway = new BidRepository();
         return bidGateway.listBids(auctionID);
     }
 }

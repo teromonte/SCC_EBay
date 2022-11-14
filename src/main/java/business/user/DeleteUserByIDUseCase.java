@@ -5,13 +5,9 @@ import main.java.DAL.gateway.IUserGateway;
 import main.java.DAL.repository.UserRepository;
 
 public class DeleteUserByIDUseCase {
-    IUserGateway userGateway;
 
-    public DeleteUserByIDUseCase() {
-        userGateway = new UserRepository();
-    }
-
-    public CosmosItemResponse<Object> DeleteUserByID(String id) {
+	public static CosmosItemResponse<Object> DeleteUserByID(String id) {
+		IUserGateway userGateway = new UserRepository();
         return userGateway.delUserById(id);
     }
 }

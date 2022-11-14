@@ -10,16 +10,10 @@ import main.java.models.DAO.QuestionDAO;
 import main.java.models.entities.Question;
 
 public class AddQuestionUseCase {
-    IQuestionGateway questionGateway;
-    IAuctionGateway auctionGateway;
 
-
-    public AddQuestionUseCase() {
-        questionGateway = new QuestionRepository();
-        auctionGateway = new AuctionRepository();
-    }
-
-    public CosmosItemResponse<QuestionDAO> addQuestion(Question question, String auctionID) {
+	public static CosmosItemResponse<QuestionDAO> addQuestion(Question question, String auctionID) {
+		IQuestionGateway questionGateway = new QuestionRepository();
+        IAuctionGateway auctionGateway = new AuctionRepository();
         QuestionDAO questionDAO = new QuestionDAO(question);
 
         if (question.getReply().isEmpty()) {

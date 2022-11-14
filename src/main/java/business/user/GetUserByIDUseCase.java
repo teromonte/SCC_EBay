@@ -7,13 +7,9 @@ import main.java.DAL.repository.UserRepository;
 import main.java.models.DAO.UserDAO;
 
 public class GetUserByIDUseCase {
-    IUserGateway userGateway;
 
-    public GetUserByIDUseCase() {
-        userGateway = new UserRepository();
-    }
-
-    public CosmosPagedIterable<UserDAO> getUserByID(String id) {
+	public static CosmosPagedIterable<UserDAO> getUserByID(String id) {
+		IUserGateway userGateway = new UserRepository();
         return userGateway.getUserById(id);
     }
 }

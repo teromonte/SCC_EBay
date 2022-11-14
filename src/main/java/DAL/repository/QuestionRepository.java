@@ -4,7 +4,10 @@ import com.azure.cosmos.CosmosContainer;
 import com.azure.cosmos.models.CosmosItemResponse;
 import com.azure.cosmos.models.CosmosQueryRequestOptions;
 import com.azure.cosmos.util.CosmosPagedIterable;
+import redis.clients.jedis.Jedis;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import main.java.DAL.CosmosDBLayer;
+import main.java.DAL.RedisLayer;
 import main.java.DAL.gateway.IQuestionGateway;
 import main.java.models.DAO.QuestionDAO;
 
@@ -29,6 +32,15 @@ public class QuestionRepository implements IQuestionGateway {
         CosmosContainer questions = getContainer();
         String id = "0:" + System.currentTimeMillis();
         questionDAO.setId(id);
-        return questions.createItem(questionDAO);
+        CosmosItemResponse<QuestionDAO> res = questions.createItem(questionDAO);
+		if(res.getStatusCode() < 300) {
+			try (Jedis jedis = RedisLayer.getCachePool().getResource()) {
+				ObjectMapper mapper = new ObjectMapper();
+				jedis.set("question:"+questionDAO.getId(), mapper.writeValueAsString(questionDAO));
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return res;
     }
 }

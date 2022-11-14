@@ -24,23 +24,26 @@ public class UserResource {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public String addUser(User user) {
-        AddUserUseCase userUseCase = new AddUserUseCase();
-        return userUseCase.addUser(user).getItem().toString();
+        return AddUserUseCase
+		.addUser(user)
+		.getItem().toString();
     }
 
     @Path("/{id}")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public String getUser(@PathParam("id") String id) {
-        GetUserByIDUseCase userUseCase = new GetUserByIDUseCase();
-        return userUseCase.getUserByID(id).stream().findFirst().get().toString();
+        return GetUserByIDUseCase
+		.getUserByID(id)
+		.stream().findFirst().get().toString();
     }
 
     @Path("/{id}")
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     public String deleteUser(@PathParam("id") String id) throws JsonProcessingException {
-        DeleteUserByIDUseCase userUseCase = new DeleteUserByIDUseCase();
-        return userUseCase.DeleteUserByID(id).getResponseHeaders().toString();
+        return DeleteUserByIDUseCase
+		.DeleteUserByID(id)
+		.getResponseHeaders().toString();
     }
 }

@@ -6,7 +6,10 @@ import com.azure.cosmos.models.CosmosItemResponse;
 import com.azure.cosmos.models.CosmosQueryRequestOptions;
 import com.azure.cosmos.models.PartitionKey;
 import com.azure.cosmos.util.CosmosPagedIterable;
+import redis.clients.jedis.Jedis;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import main.java.DAL.CosmosDBLayer;
+import main.java.DAL.RedisLayer;
 import main.java.DAL.gateway.IAuctionGateway;
 import main.java.models.DAO.AuctionDAO;
 
@@ -27,14 +30,24 @@ public class AuctionRepository implements IAuctionGateway {
     @Override
     public CosmosItemResponse<AuctionDAO> putAuction(AuctionDAO auction) {
         var u = getAuctionById(auction.getId());
+		CosmosItemResponse<AuctionDAO> res;
         if (u == null) {
             String id = "0:" + System.currentTimeMillis();
             auction.setId(id);
-            return auctions.createItem(auction);
+            res = auctions.createItem(auction);
         } else {
             PartitionKey key = new PartitionKey(auction.getId());
-            return auctions.replaceItem(auction, auction.getId(), key, new CosmosItemRequestOptions());
+            res = auctions.replaceItem(auction, auction.getId(), key, new CosmosItemRequestOptions());
         }
+		if(res.getStatusCode() < 300) {
+			try (Jedis jedis = RedisLayer.getCachePool().getResource()) {
+				ObjectMapper mapper = new ObjectMapper();
+				jedis.set("auction:"+auction.getId(), mapper.writeValueAsString(auction));
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return res;
     }
 
     @Override
