@@ -1,13 +1,27 @@
 package main.java.models.entities;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+import java.util.Date;
+
 public class Bid {
     private String id; // code
     private String auction; // code
     private String user;
     private String value;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSX")
+    private Date time;
 
     public Bid() {
         super();
+    }
+
+    public Bid(String id, String auction, String user, String value, Date time) {
+        this.id = id;
+        this.auction = auction;
+        this.user = user;
+        this.value = value;
+        this.time = time;
     }
 
     public Bid(String id, String auction, String user, String value) {
@@ -15,6 +29,19 @@ public class Bid {
         this.auction = auction;
         this.user = user;
         this.value = value;
+    }
+
+    @Override
+    public String toString() {
+        return "Bid{" + "id='" + id + '\'' + ", auction='" + auction + '\'' + ", user='" + user + '\'' + ", value='" + value + '\'' + ", time=" + time + '}';
+    }
+
+    public Date getTime() {
+        return time;
+    }
+
+    public void setTime(Date time) {
+        this.time = time;
     }
 
     public String getId() {
@@ -49,8 +76,4 @@ public class Bid {
         this.value = value;
     }
 
-    @Override
-    public String toString() {
-        return "Bid{" + "id='" + id + '\'' + ", auction='" + auction + '\'' + ", user='" + user + '\'' + ", value='" + value + '\'' + '}';
-    }
 }

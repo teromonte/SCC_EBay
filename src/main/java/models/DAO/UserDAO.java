@@ -10,7 +10,6 @@ public class UserDAO {
     private String _ts;
     private String id;
     private String name;
-    private String nickname;
     private String pwd;
     private String photoId;
 
@@ -18,14 +17,13 @@ public class UserDAO {
     }
 
     public UserDAO(User u) {
-        this(u.getId(), u.getName(), u.getNickname(), u.getPwd(), u.getPhotoId());
+        this(u.getId(), u.getName(), u.getPwd(), u.getPhotoId());
     }
 
-    public UserDAO(String id, String name, String nickname, String pwd, String photoId) {
+    public UserDAO(String id, String name, String pwd, String photoId) {
         super();
         this.id = id;
         this.name = name;
-        this.nickname = nickname;
         this.pwd = pwd;
         this.photoId = photoId;
     }
@@ -62,14 +60,6 @@ public class UserDAO {
         this.name = name;
     }
 
-    public String getNickname() {
-        return nickname;
-    }
-
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
-    }
-
     public String getPwd() {
         return pwd;
     }
@@ -87,11 +77,11 @@ public class UserDAO {
     }
 
     public User toUser() {
-        return new User(id, name, nickname, pwd, photoId);
+        return new User(id, name, pwd, photoId);
     }
 
     @Override
     public String toString() {
-        return "UserDAO{" + "_rid='" + _rid + '\'' + ", _ts='" + _ts + '\'' + ", id='" + id + '\'' + ", name='" + name + '\'' + ", nickname='" + nickname + '\'' + ", pwd='" + pwd + '\'' + ", photoId='" + photoId + '\'' + '}';
+        return "UserDAO{" + "_rid='" + _rid + '\'' + ", _ts='" + _ts + '\'' + ", id='" + id + '\'' + ", name='" + name + '\'' + ", pwd='" + pwd + '\'' + ", photoId='" + photoId + '\'' + '}';
     }
 }

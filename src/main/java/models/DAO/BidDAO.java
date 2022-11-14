@@ -1,6 +1,9 @@
 package main.java.models.DAO;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import main.java.models.entities.Bid;
+
+import java.util.Date;
 
 public class BidDAO {
     private String _rid;
@@ -9,6 +12,18 @@ public class BidDAO {
     private String auction;
     private String user;
     private String value;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSX")
+    private Date time;
+
+    public BidDAO(String _rid, String _ts, String id, String auction, String user, String value, Date time) {
+        this._rid = _rid;
+        this._ts = _ts;
+        this.id = id;
+        this.auction = auction;
+        this.user = user;
+        this.value = value;
+        this.time = time;
+    }
 
     public BidDAO(String id, String auction, String user, String value) {
         super();
@@ -30,11 +45,6 @@ public class BidDAO {
         return new Bid(id, auction, user, value);
     }
 
-    @Override
-    public String toString() {
-        return "BidDAO{" + "_rid='" + _rid + '\'' + ", _ts='" + _ts + '\'' + ", id='" + id + '\'' + ", auction='" + auction + '\'' + ", user='" + user + '\'' + ", value='" + value + '\'' + '}';
-    }
-
     public String get_rid() {
         return _rid;
     }
@@ -49,6 +59,19 @@ public class BidDAO {
 
     public void set_ts(String _ts) {
         this._ts = _ts;
+    }
+
+    @Override
+    public String toString() {
+        return "BidDAO{" + "_rid='" + _rid + '\'' + ", _ts='" + _ts + '\'' + ", id='" + id + '\'' + ", auction='" + auction + '\'' + ", user='" + user + '\'' + ", value='" + value + '\'' + ", time=" + time + '}';
+    }
+
+    public Date getTime() {
+        return time;
+    }
+
+    public void setTime(Date time) {
+        this.time = time;
     }
 
     public String getId() {

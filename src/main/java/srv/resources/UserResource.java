@@ -3,10 +3,15 @@ package main.java.srv.resources;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.NewCookie;
+import jakarta.ws.rs.core.Response;
 import main.java.business.user.AddUserUseCase;
 import main.java.business.user.DeleteUserByIDUseCase;
 import main.java.business.user.GetUserByIDUseCase;
+import main.java.models.entities.Login;
 import main.java.models.entities.User;
+
+import java.util.UUID;
 
 /**
  * Class with user endpoints.
@@ -43,4 +48,27 @@ public class UserResource {
         DeleteUserByIDUseCase userUseCase = new DeleteUserByIDUseCase();
         return userUseCase.DeleteUserByID(id).getResponseHeaders().toString();
     }
+
+    @POST
+    @Path("/auth")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response auth(Login user) {
+        boolean pwdOk = false;
+        // Check pwd
+        if( pwdOk) {
+            String uid = UUID.randomUUID().toString();
+            NewCookie cookie = new NewCookie.Builder("scc:session")
+                    .value(uid)
+                    .path("/")
+                    .comment("sessionid")
+                    .maxAge(3600)
+                    .secure(false)
+                    .httpOnly(true)
+                    .build();
+            //RedisLayer.getInstance().putSession( new Session( uid, user.getUser()));
+            return Response.ok().cookie(cookie).build();
+        } else
+            throw new NotAuthorizedException("Incorrect login");
+    }
+
 }

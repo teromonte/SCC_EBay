@@ -79,6 +79,11 @@
             <version>2.13.3</version>
         </dependency>
         <dependency>
+            <groupId>com.microsoft.azure</groupId>
+            <artifactId>azure-mgmt-redis</artifactId>
+            <version>1.41.4</version>
+        </dependency>
+        <dependency>
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>resteasy-core</artifactId>
             <version>6.1.0.Final</version>

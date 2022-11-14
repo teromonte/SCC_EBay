@@ -6,7 +6,6 @@ package main.java.models.entities;
 public class User {
     private String id; // code
     private String name;
-    private String nickname;
     private String pwd;
     private String photoId;
 
@@ -14,18 +13,17 @@ public class User {
         super();
     }
 
-    public User(String id, String name, String nickname, String pwd, String photoId) {
+    public User(String id, String name, String pwd, String photoId) {
         super();
         this.id = id;
         this.name = name;
-        this.nickname = nickname;
         this.pwd = pwd;
         this.photoId = photoId;
     }
 
     @Override
     public String toString() {
-        return "User{" + "id='" + id + '\'' + ", name='" + name + '\'' + ", nickname='" + nickname + '\'' + ", pwd='" + pwd + '\'' + ", photoId='" + photoId + '\'' + '}';
+        return "User{" + "id='" + id + '\'' + ", name='" + name + '\'' + ", pwd='" + pwd + '\'' + ", photoId='" + photoId + '\'' + '}';
     }
 
     public String getId() {
@@ -42,14 +40,6 @@ public class User {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getNickname() {
-        return nickname;
-    }
-
-    public void setNickname(String name) {
-        this.nickname = nickname;
     }
 
     public String getPwd() {
