@@ -7,12 +7,9 @@ import main.java.models.DAO.UserDAO;
 import main.java.models.entities.User;
 
 public class AddUserUseCase {
-    IUserGateway userGateway;
-    public AddUserUseCase() {
-        userGateway = new UserRepository();
-    }
 
-    public CosmosItemResponse<UserDAO> addUser(User user) {
+	public static CosmosItemResponse<UserDAO> addUser(User user) {
+		IUserGateway userGateway = new UserRepository();
         UserDAO userDAO = new UserDAO(user);
         return userGateway.putUser(userDAO);
     }

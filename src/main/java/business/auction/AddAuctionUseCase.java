@@ -9,13 +9,9 @@ import main.java.models.entities.Auction;
 import java.time.LocalDateTime;
 
 public class AddAuctionUseCase {
-    IAuctionGateway auctionGateway;
 
-    public AddAuctionUseCase() {
-        auctionGateway = new AuctionRepository();
-    }
-
-    public CosmosItemResponse<AuctionDAO> addAuction(Auction auction) {
+    public static CosmosItemResponse<AuctionDAO> addAuction(Auction auction) {
+		IAuctionGateway auctionGateway = new AuctionRepository();
         AuctionDAO auctionDAO = new AuctionDAO(auction);
         auctionDAO.setEndTime(LocalDateTime.now().plusHours(2).toString());
         return auctionGateway.putAuction(auctionDAO);

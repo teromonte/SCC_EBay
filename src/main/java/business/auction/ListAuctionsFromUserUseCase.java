@@ -6,13 +6,9 @@ import main.java.DAL.repository.AuctionRepository;
 import main.java.models.DAO.AuctionDAO;
 
 public class ListAuctionsFromUserUseCase {
-    IAuctionGateway auctionGateway;
 
-    public ListAuctionsFromUserUseCase() {
-        auctionGateway = new AuctionRepository();
-    }
-
-    public CosmosPagedIterable<AuctionDAO> ListAuctionsFromUser(String userID) {
+    public static CosmosPagedIterable<AuctionDAO> listAuctionsFromUser(String userID) {
+		IAuctionGateway auctionGateway = new AuctionRepository();
         return auctionGateway.listAuctionsFromUser(userID);
     }
 }

@@ -4,6 +4,7 @@ import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import main.java.business.auction.AddAuctionUseCase;
 import main.java.business.auction.ListAuctionsAboutToCloseUseCase;
+import main.java.business.auction.ListAuctionsFromUserUseCase;
 import main.java.business.bid.AddBidUseCase;
 import main.java.business.bid.ListBidsUseCase;
 import main.java.business.question.AddQuestionUseCase;
@@ -22,24 +23,27 @@ public class AuctionResource {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public String addAuction(Auction auction) {
-        AddAuctionUseCase auctionUseCase = new AddAuctionUseCase();
-        return auctionUseCase.addAuction(auction).getItem().toString();
+        return AddAuctionUseCase
+		.addAuction(auction)
+		.getItem().toString();
     }
 
     @Path("/listAuctionsAboutToClose")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public String listAuctionsAboutToClose() {
-        ListAuctionsAboutToCloseUseCase listAuctionsAboutToCloseUseCase = new ListAuctionsAboutToCloseUseCase();
-        return listAuctionsAboutToCloseUseCase.listAuctionsAboutToClose().stream().toList().toString();
+        return ListAuctionsAboutToCloseUseCase
+		.listAuctionsAboutToClose()
+		.stream().toList().toString();
     }
 
     @Path("/listAuctionsFromUser/{userID}")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public String listAuctionsFromUser(@PathParam("userID") String userID) {
-        ListAuctionsAboutToCloseUseCase listAuctionsAboutToCloseUseCase = new ListAuctionsAboutToCloseUseCase();
-        return listAuctionsAboutToCloseUseCase.listAuctionsAboutToClose().stream().toList().toString();
+        return ListAuctionsFromUserUseCase
+		.listAuctionsFromUser(userID)
+		.stream().toList().toString();
     }
 
     @Path("/{auctionID}/bid")
@@ -47,24 +51,27 @@ public class AuctionResource {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public String addBid(Bid bid, @PathParam("auctionID") String auctionID) {
-        AddBidUseCase bidUseCase = new AddBidUseCase();
-        return bidUseCase.addBid(bid, auctionID).getItem().toString();
+        return AddBidUseCase
+		.addBid(bid, auctionID)
+		.getItem().toString();
     }
 
     @Path("/{auctionID}/bid")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public String listBid(@PathParam("auctionID") String auctionID) {
-        ListBidsUseCase listBidsUseCase = new ListBidsUseCase();
-        return listBidsUseCase.listBids(auctionID).stream().toList().toString();
+        return ListBidsUseCase
+		.listBids(auctionID)
+		.stream().toList().toString();
     }
 
     @Path("/{auctionID}/question")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public String listQuestion(@PathParam("auctionID") String auctionID) {
-        ListQuestionsUseCase listQuestionsUseCase = new ListQuestionsUseCase();
-        return listQuestionsUseCase.listQuestions(auctionID).stream().toList().toString();
+        return ListQuestionsUseCase
+		.listQuestions(auctionID)
+		.stream().toList().toString();
     }
 
     @Path("/{auctionID}/question")
@@ -72,8 +79,9 @@ public class AuctionResource {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public String addQuestion(Question question, @PathParam("auctionID") String auctionID) {
-        AddQuestionUseCase addQuestionUseCase = new AddQuestionUseCase();
-        return addQuestionUseCase.addQuestion(question, auctionID).getItem().toString();
+        return AddQuestionUseCase
+		.addQuestion(question, auctionID)
+		.getItem().toString();
     }
 
 }

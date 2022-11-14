@@ -4,7 +4,10 @@ import com.azure.cosmos.CosmosContainer;
 import com.azure.cosmos.models.CosmosItemResponse;
 import com.azure.cosmos.models.CosmosQueryRequestOptions;
 import com.azure.cosmos.util.CosmosPagedIterable;
+import redis.clients.jedis.Jedis;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import main.java.DAL.CosmosDBLayer;
+import main.java.DAL.RedisLayer;
 import main.java.DAL.gateway.IBidGateway;
 import main.java.models.DAO.BidDAO;
 
@@ -30,6 +33,15 @@ public class BidRepository implements IBidGateway {
         CosmosContainer bids = getContainer();
         String id = "0:" + System.currentTimeMillis();
         bidDAO.setId(id);
-        return bids.createItem(bidDAO);
+        CosmosItemResponse<BidDAO> res = bids.createItem(bidDAO);
+		if(res.getStatusCode() < 300) {
+			try (Jedis jedis = RedisLayer.getCachePool().getResource()) {
+				ObjectMapper mapper = new ObjectMapper();
+				jedis.set("bid:"+bidDAO.getId(), mapper.writeValueAsString(bidDAO));
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return res;
     }
 }
