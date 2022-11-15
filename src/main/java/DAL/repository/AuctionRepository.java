@@ -57,7 +57,15 @@ public class AuctionRepository implements IAuctionGateway {
 
     @Override
     public CosmosPagedIterable<AuctionDAO> listAuctionsAboutToClose() {
-        return auctions.queryItems("SELECT * FROM auctions", new CosmosQueryRequestOptions(), AuctionDAO.class);
+		CosmosPagedIterable<AuctionDAO> pi = auctions.queryItems("SELECT * FROM auctions", new CosmosQueryRequestOptions(), AuctionDAO.class);
+		try (Jedis jedis = RedisLayer.getCachePool().getResource()) {
+			ObjectMapper mapper = new ObjectMapper();
+			for(AuctionDAO item : pi)
+			    jedis.rpush("auctionL", mapper.writeValueAsString(item));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+        return pi;
     }
 
     @Override
