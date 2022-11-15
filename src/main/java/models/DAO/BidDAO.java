@@ -15,9 +15,7 @@ public class BidDAO {
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSX")
     private Date time;
 
-    public BidDAO(String _rid, String _ts, String id, String auction, String user, String value, Date time) {
-        this._rid = _rid;
-        this._ts = _ts;
+    public BidDAO(String id, String auction, String user, String value, Date time) {
         this.id = id;
         this.auction = auction;
         this.user = user;
@@ -25,24 +23,12 @@ public class BidDAO {
         this.time = time;
     }
 
-    public BidDAO(String id, String auction, String user, String value) {
-        super();
-        this.id = id;
-        this.auction = auction;
-        this.user = user;
-        this.value = value;
-    }
-
     public BidDAO(Bid bid) {
-        this(bid.getId(), bid.getAuction(), bid.getUser(), bid.getValue());
+        this(bid.getId(), bid.getAuction(), bid.getUser(), bid.getValue(), bid.getTime());
     }
 
     public BidDAO() {
 
-    }
-
-    public Bid toBid() {
-        return new Bid(id, auction, user, value);
     }
 
     public String get_rid() {

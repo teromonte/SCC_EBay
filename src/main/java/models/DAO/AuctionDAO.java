@@ -35,7 +35,7 @@ public class AuctionDAO {
     }
 
     public AuctionDAO(Auction auction) {
-        this(auction.getId(),auction.getTitle(),auction.getDescription(),auction.getImage(),auction.getOwner(),auction.getEndTime(),auction.getMinimumPrice(),auction.getWinnerBid() );
+        this(auction.getId(), auction.getTitle(), auction.getDescription(), auction.getImage(), auction.getOwner(), auction.getEndTime(), auction.getMinimumPrice(), auction.getWinnerBid());
     }
 
     @Override

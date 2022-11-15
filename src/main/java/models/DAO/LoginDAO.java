@@ -1,5 +1,7 @@
 package main.java.models.DAO;
 
+import main.java.models.entities.Login;
+
 public class LoginDAO {
     private String _rid;
     private String _ts;
@@ -7,8 +9,17 @@ public class LoginDAO {
     private String pwd;
 
     public LoginDAO(String user, String pwd) {
+        super();
         this.user = user;
         this.pwd = pwd;
+    }
+
+    public LoginDAO(Login login) {
+        this(login.getUser(), login.getPwd());
+    }
+
+    public LoginDAO() {
+
     }
 
     @Override

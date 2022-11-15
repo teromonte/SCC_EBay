@@ -13,6 +13,14 @@ public class Login {
         super();
     }
 
+    public String getPwd() {
+        return pwd;
+    }
+
+    public void setPwd(String pwd) {
+        this.pwd = pwd;
+    }
+
     @Override
     public String toString() {
         return "Login{" + "user='" + user + '\'' + ", pwd='" + pwd + '\'' + '}';

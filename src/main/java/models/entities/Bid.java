@@ -24,13 +24,6 @@ public class Bid {
         this.time = time;
     }
 
-    public Bid(String id, String auction, String user, String value) {
-        this.id = id;
-        this.auction = auction;
-        this.user = user;
-        this.value = value;
-    }
-
     @Override
     public String toString() {
         return "Bid{" + "id='" + id + '\'' + ", auction='" + auction + '\'' + ", user='" + user + '\'' + ", value='" + value + '\'' + ", time=" + time + '}';

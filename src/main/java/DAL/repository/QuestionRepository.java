@@ -37,6 +37,7 @@ public class QuestionRepository implements IQuestionGateway {
 			try (Jedis jedis = RedisLayer.getCachePool().getResource()) {
 				ObjectMapper mapper = new ObjectMapper();
 				jedis.set("question:"+questionDAO.getId(), mapper.writeValueAsString(questionDAO));
+
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
