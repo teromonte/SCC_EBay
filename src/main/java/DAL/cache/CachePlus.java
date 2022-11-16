@@ -1,4 +1,4 @@
-package main.java.DAL.repository;
+package main.java.DAL.cache;
 
 import redis.clients.jedis.Jedis;
 import java.util.List;
