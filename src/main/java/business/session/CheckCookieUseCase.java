@@ -15,7 +15,7 @@ public class CheckCookieUseCase {
         Session s;
         try {
             //s = RedisLayer.getInstance().getSession(session.getValue());
-        } catch (CacheException e) {
+        } catch (Exception e) {
             throw new NotAuthorizedException("No valid session initialized");
         }
         if (s == null || s.getUser() == null || s.getUser().length() == 0)

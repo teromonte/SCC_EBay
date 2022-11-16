@@ -4,7 +4,7 @@ import java.util.List;
 import com.azure.cosmos.util.CosmosPagedIterable;
 import main.java.DAL.gateway.IAuctionGateway;
 import main.java.DAL.repository.AuctionRepository;
-import main.java.DAL.repository.CachePlus;
+import main.java.DAL.cache.CachePlus;
 import main.java.models.DAO.AuctionDAO;
 
 public class ListAuctionsAboutToCloseUseCase {

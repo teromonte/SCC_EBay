@@ -4,7 +4,7 @@ import com.azure.cosmos.models.CosmosItemResponse;
 import com.azure.cosmos.util.CosmosPagedIterable;
 import main.java.DAL.gateway.IUserGateway;
 import main.java.DAL.repository.UserRepository;
-import main.java.DAL.repository.CachePlus;
+import main.java.DAL.cache.CachePlus;
 import main.java.models.DAO.UserDAO;
 
 public class GetUserByIDUseCase {
