@@ -3,7 +3,7 @@ package main.java.DAL;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
 
-public class RedisLayer {
+public class RedisCache {
 	private static final String RedisHostname = "scc2223cache55355.redis.cache.windows.net";
 	private static final String RedisKey = "GudDseC4SXVxxASKWpw3eVEENeTnK2KSGAzCaEbZKH8=";
 	

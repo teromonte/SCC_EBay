@@ -4,19 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b469088-9480-470d-bb72-0267c4b9bd8d" name="Changes" comment="Model fix">
-      <change afterPath="$PROJECT_DIR$/src/main/java/business/login/CheckAuthenticationUseCase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/business/session/CheckCookieUseCase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/models/DAO/SessionDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/models/entities/Session.java" afterDir="false" />
+    <list default="true" id="1b469088-9480-470d-bb72-0267c4b9bd8d" name="Changes" comment="fix in the models + begin of authentication">
+      <change afterPath="$PROJECT_DIR$/src/main/java/business/user/CheckAuthenticationUseCase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/DAO/AuctionDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/DAO/AuctionDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/DAO/BidDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/DAO/BidDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/DAO/LoginDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/DAO/LoginDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/entities/Bid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/entities/Bid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAL/CosmosDBLayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAL/CosmosDBLayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAL/RedisLayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAL/RedisCache.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAL/repository/AuctionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAL/repository/AuctionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAL/repository/BidRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAL/repository/BidRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAL/repository/CachePlus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAL/repository/CachePlus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAL/repository/QuestionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAL/repository/QuestionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAL/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAL/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/business/login/CheckAuthenticationUseCase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/business/session/CheckCookieUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/session/CheckCookieUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/business/user/GetUserByIDUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/user/GetUserByIDUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/DAO/LoginDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/DAO/SessionDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/DAO/SessionDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/models/entities/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/entities/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/srv/resources/AuctionResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/srv/resources/AuctionResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/entities/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/entities/Session.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/srv/resources/UserResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/srv/resources/UserResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/Hash.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/Hash.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/create-users.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/create-users.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/test-utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/test-utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/workload1.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/workload1.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,9 +36,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="package-info" />
         <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -287,7 +297,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668423467585</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="fix in the models + begin of authentication">
+      <created>1668517184590</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1668517184590</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -331,6 +348,7 @@
     <MESSAGE value="Beginning of testing" />
     <MESSAGE value="authentication + preparation for tests" />
     <MESSAGE value="Model fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="Model fix" />
+    <MESSAGE value="fix in the models + begin of authentication" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix in the models + begin of authentication" />
   </component>
 </project>

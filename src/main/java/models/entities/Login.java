@@ -1,16 +1,26 @@
 package main.java.models.entities;
 
 public class Login {
+    private String id;
     private String user;
     private String pwd;
 
-    public Login(String user, String pwd) {
+    public Login(String id, String user, String pwd) {
+        this.id = id;
         this.user = user;
         this.pwd = pwd;
     }
 
     public Login() {
         super();
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getPwd() {

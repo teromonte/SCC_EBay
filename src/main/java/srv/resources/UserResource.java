@@ -1,11 +1,10 @@
 package main.java.srv.resources;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
+import main.java.business.user.CheckAuthenticationUseCase;
 import main.java.business.user.AddUserUseCase;
-import main.java.business.login.CheckAuthenticationUseCase;
 import main.java.business.user.DeleteUserByIDUseCase;
 import main.java.business.user.GetUserByIDUseCase;
 import main.java.models.entities.Login;
@@ -27,27 +26,21 @@ public class UserResource {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public String addUser(User user) {
-        return AddUserUseCase
-		.addUser(user)
-		.getItem().toString();
+        return AddUserUseCase.addUser(user).getItem().toString();
     }
 
     @Path("/{id}")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public String getUser(@PathParam("id") String id) {
-        return GetUserByIDUseCase
-		.getUserByID(id)
-		.stream().findFirst().get().toString();
+        return GetUserByIDUseCase.getUserByID(id).stream().findFirst().get().toString();
     }
 
     @Path("/{id}")
     @POST
     @Produces(MediaType.APPLICATION_JSON)
-    public String deleteUser(@PathParam("id") String id) throws JsonProcessingException {
-        return DeleteUserByIDUseCase
-		.DeleteUserByID(id)
-		.getResponseHeaders().toString();
+    public String deleteUser(@PathParam("id") String id) {
+        return DeleteUserByIDUseCase.DeleteUserByID(id).getResponseHeaders().toString();
     }
 
     @POST

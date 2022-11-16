@@ -209,7 +209,7 @@ scenarios:
             beforeRequest: "uploadImageBody"
             capture: 
               regexp: "(.+)"
-              as: "imageId"              # capture the reply as image id to be used in uction creation
+              as: "imageId"              # capture the reply as image id to be used in function creation
             ifTrue: "nextAction == 3"
         - post:                          # Create auction
             url: "/auction"

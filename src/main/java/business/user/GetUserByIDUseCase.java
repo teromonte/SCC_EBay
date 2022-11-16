@@ -1,6 +1,5 @@
 package main.java.business.user;
 
-import com.azure.cosmos.models.CosmosItemResponse;
 import com.azure.cosmos.util.CosmosPagedIterable;
 import main.java.DAL.gateway.IUserGateway;
 import main.java.DAL.repository.UserRepository;

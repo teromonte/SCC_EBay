@@ -7,7 +7,7 @@ import com.azure.cosmos.util.CosmosPagedIterable;
 import redis.clients.jedis.Jedis;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import main.java.DAL.CosmosDBLayer;
-import main.java.DAL.RedisLayer;
+import main.java.DAL.RedisCache;
 import main.java.DAL.gateway.IBidGateway;
 import main.java.models.DAO.BidDAO;
 
@@ -26,7 +26,7 @@ public class BidRepository implements IBidGateway {
     public CosmosPagedIterable<BidDAO> listBids(String auctionID) {
         CosmosContainer bids = getContainer();
 		CosmosPagedIterable<BidDAO> pi = bids.queryItems("SELECT * FROM bids WHERE bids.auction=\"" + auctionID + "\"", new CosmosQueryRequestOptions(), BidDAO.class);
-		try (Jedis jedis = RedisLayer.getCachePool().getResource()) {
+		try (Jedis jedis = RedisCache.getCachePool().getResource()) {
 			ObjectMapper mapper = new ObjectMapper();
 			for(BidDAO item : pi)
 			    jedis.rpush("bidL:" + auctionID, mapper.writeValueAsString(item));
@@ -43,7 +43,7 @@ public class BidRepository implements IBidGateway {
         bidDAO.setId(id);
         CosmosItemResponse<BidDAO> res = bids.createItem(bidDAO);
 		if(res.getStatusCode() < 300) {
-			try (Jedis jedis = RedisLayer.getCachePool().getResource()) {
+			try (Jedis jedis = RedisCache.getCachePool().getResource()) {
 				ObjectMapper mapper = new ObjectMapper();
 				jedis.set("bid:"+bidDAO.getId(), mapper.writeValueAsString(bidDAO));
 			} catch (Exception e) {

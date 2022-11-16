@@ -21,7 +21,7 @@ module.exports = {
 }
 
 
-const Faker = require('faker/locale/en_US')
+const Faker = require('@faker-js/faker').faker
 const fs = require('fs')
 const path = require('path')
 
