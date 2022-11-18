@@ -15,7 +15,10 @@ public class ListQuestionsUseCase {
         return questionGateway.listQuestions(auctionID);
     }
 	
-	public static List<String> cacheListQuestions(String auctionID) {
-		return CachePlus.cacheGet(CachePlus.QUESTION_LIST, auctionID);
+	public static List<String> cacheListQuestions(String auctionID) throws Exception {
+		List<String> res = CachePlus.cacheGet(CachePlus.QUESTION_LIST, auctionID);
+		if(res==null)
+			throw new Exception("Not in cache");
+		return res;
     }
 }

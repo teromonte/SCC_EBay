@@ -16,7 +16,10 @@ public class ListBidsUseCase {
         return bidGateway.listBids(auctionID);
     }
 	
-	public static List<String> cacheListBids(String auctionID) {
-		return CachePlus.cacheGet(CachePlus.BID_LIST, auctionID);
+	public static List<String> cacheListBids(String auctionID) throws Exception {
+		List<String> res = CachePlus.cacheGet(CachePlus.BID_LIST, auctionID);
+		if(res==null)
+			throw new Exception("Not in cache");
+		return res;
     }
 }
