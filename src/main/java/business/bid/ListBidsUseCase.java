@@ -17,6 +17,6 @@ public class ListBidsUseCase {
     }
 	
 	public static List<String> cacheListBids(String auctionID) {
-		return CachePlus.cacheGet("bidL", auctionID);
+		return CachePlus.cacheGet(CachePlus.BID_LIST, auctionID);
     }
 }

@@ -15,6 +15,6 @@ public class ListAuctionsAboutToCloseUseCase {
     }
 	
 	public static List<String> cacheListAuctionsAboutToClose() {
-		return CachePlus.cacheGet("auctionL", null);
+		return CachePlus.cacheGet(CachePlus.AUCTION_LIST, null);
     }
 }
