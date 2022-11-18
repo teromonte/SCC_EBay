@@ -40,4 +40,5 @@ scenarios:
               name: "{{ name }}"
               pwd: "{{ pwd }}"
               photoId: "{{ imageId }}"
+            afterResponse: "genNewUserReply"    # capture result and store in file
         count: "{{ numUsers }}"

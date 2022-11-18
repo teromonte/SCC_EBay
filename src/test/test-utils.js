@@ -179,6 +179,8 @@ function selectUserSkewed(context, events, done) {
  * bidValue - price for the next bid
  */
 function genNewAuction(context, events, done) {
+	console.log("print" + context.vars.user)
+	console.log("print" + context.vars.pwd)
 	context.vars.title = `${Faker.commerce.productName()}`
 	context.vars.description = `${Faker.commerce.productDescription()}`
 	context.vars.minimumPrice = `${Faker.commerce.price()}`

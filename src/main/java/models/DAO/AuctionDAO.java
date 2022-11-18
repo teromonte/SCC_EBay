@@ -18,8 +18,9 @@ public class AuctionDAO {
     private Date endTime;
     private float minimumPrice;
     private Bid bid;
+    private String status;
 
-    public AuctionDAO(String id, String title, String description, String image, String owner, Date endTime, float minimumPrice, Bid bid) {
+    public AuctionDAO(String id, String title, String description, String image, String owner, Date endTime, float minimumPrice, Bid bid, String status) {
         this.id = id;
         this.title = title;
         this.description = description;
@@ -28,6 +29,7 @@ public class AuctionDAO {
         this.endTime = endTime;
         this.minimumPrice = minimumPrice;
         this.bid = bid;
+        this.status = status;
     }
 
     public AuctionDAO() {
@@ -35,7 +37,15 @@ public class AuctionDAO {
     }
 
     public AuctionDAO(Auction auction) {
-        this(auction.getId(), auction.getTitle(), auction.getDescription(), auction.getImage(), auction.getOwner(), auction.getEndTime(), auction.getMinimumPrice(), auction.getWinnerBid());
+        this(auction.getId(), auction.getTitle(), auction.getDescription(), auction.getImage(), auction.getOwner(), auction.getEndTime(), auction.getMinimumPrice(), auction.getWinnerBid(), auction.getStatus());
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     @Override

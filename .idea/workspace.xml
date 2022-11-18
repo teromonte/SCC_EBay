@@ -4,26 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b469088-9480-470d-bb72-0267c4b9bd8d" name="Changes" comment="fix in the models + begin of authentication">
-      <change afterPath="$PROJECT_DIR$/src/main/java/business/user/CheckAuthenticationUseCase.java" afterDir="false" />
+    <list default="true" id="1b469088-9480-470d-bb72-0267c4b9bd8d" name="Changes" comment="fix">
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/GenericExceptionMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAL/CosmosDBLayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAL/CosmosDBLayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAL/RedisLayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAL/RedisCache.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAL/BlobStorageLayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAL/BlobStorageLayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAL/RedisCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAL/RedisCache.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAL/cache/CachePlus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAL/cache/CachePlus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAL/gateway/IAuctionGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAL/gateway/IAuctionGateway.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DAL/repository/AuctionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAL/repository/AuctionRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DAL/repository/BidRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAL/repository/BidRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAL/repository/CachePlus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAL/repository/CachePlus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAL/repository/QuestionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAL/repository/QuestionRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DAL/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAL/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/business/login/CheckAuthenticationUseCase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/business/auction/AddAuctionUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/auction/AddAuctionUseCase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/business/session/CheckCookieUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/session/CheckCookieUseCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/business/user/GetUserByIDUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/user/GetUserByIDUseCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/DAO/LoginDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/DAO/SessionDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/DAO/SessionDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/business/user/CheckAuthenticationUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/user/CheckAuthenticationUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/DAO/AuctionDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/DAO/AuctionDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/entities/Auction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/entities/Auction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/models/entities/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/entities/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/entities/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/entities/Session.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/srv/resources/AuctionResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/srv/resources/AuctionResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/srv/resources/MediaResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/srv/resources/MediaResource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/srv/resources/UserResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/srv/resources/UserResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utils/Hash.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/Hash.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/README" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/README" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/create-users.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/create-users.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/test-utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/test-utils.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/workload1.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/workload1.yml" afterDir="false" />
@@ -304,7 +305,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668517184590</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="fix">
+      <created>1668613886695</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1668613886695</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -349,6 +357,7 @@
     <MESSAGE value="authentication + preparation for tests" />
     <MESSAGE value="Model fix" />
     <MESSAGE value="fix in the models + begin of authentication" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix in the models + begin of authentication" />
+    <MESSAGE value="fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix" />
   </component>
 </project>

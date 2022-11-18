@@ -2,6 +2,7 @@ package main.java.srv.resources;
 
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
 import main.java.business.media.DownloadMediaUseCase;
 import main.java.business.media.UploadMediaUseCase;
 
@@ -18,9 +19,10 @@ public class MediaResource {
     @Path("/")
     @Consumes(MediaType.APPLICATION_OCTET_STREAM)
     @Produces(MediaType.APPLICATION_JSON)
-    public String upload(byte[] contents) {
+    public Response upload(byte[] contents) {
         UploadMediaUseCase uploadMediaUseCase = new UploadMediaUseCase();
-        return uploadMediaUseCase.uploadMedia(contents);
+        var res = uploadMediaUseCase.uploadMedia(contents);
+        return Response.ok(res).build();
     }
 
     /**

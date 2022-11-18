@@ -3,12 +3,14 @@ package main.java.srv.resources;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
-import main.java.business.user.CheckAuthenticationUseCase;
 import main.java.business.user.AddUserUseCase;
+import main.java.business.user.CheckAuthenticationUseCase;
 import main.java.business.user.DeleteUserByIDUseCase;
 import main.java.business.user.GetUserByIDUseCase;
+import main.java.models.DAO.UserDAO;
 import main.java.models.entities.Login;
 import main.java.models.entities.User;
+import main.java.utils.GenericExceptionMapper;
 
 /**
  * Class with user endpoints.
@@ -25,8 +27,16 @@ public class UserResource {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public String addUser(User user) {
-        return AddUserUseCase.addUser(user).getItem().toString();
+    public Response addUser(User user) {
+        UserDAO u;
+        try {
+            u = AddUserUseCase.addUser(user).getItem();
+            return Response.ok(u).build();
+        } catch (Exception e) {
+            GenericExceptionMapper g = new GenericExceptionMapper();
+            return g.toResponse(e);
+
+        }
     }
 
     @Path("/{id}")
@@ -45,9 +55,11 @@ public class UserResource {
 
     @POST
     @Path("/auth")
+    @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public Response auth(Login user) {
         return CheckAuthenticationUseCase.check(user);
+
     }
 
 }

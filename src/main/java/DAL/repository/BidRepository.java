@@ -12,20 +12,23 @@ import main.java.DAL.gateway.IBidGateway;
 import main.java.models.DAO.BidDAO;
 
 public class BidRepository implements IBidGateway {
+
+    private CosmosDBLayer bids;
     public BidRepository() {
+        this.bids = getContainer();
     }
 
-    private CosmosContainer getContainer() {
+    private CosmosDBLayer getContainer() {
         CosmosDBLayer db = CosmosDBLayer.getInstance();
         db.init(CosmosDBLayer.BID_CONTAINER);
-        return db.getContainer();
+        return db;
     }
 
 
     @Override
     public CosmosPagedIterable<BidDAO> listBids(String auctionID) {
-        CosmosContainer bids = getContainer();
-		CosmosPagedIterable<BidDAO> pi = bids.queryItems("SELECT * FROM bids WHERE bids.auction=\"" + auctionID + "\"", new CosmosQueryRequestOptions(), BidDAO.class);
+		CosmosPagedIterable<BidDAO> pi = bids.getContainer().queryItems("SELECT * FROM bids WHERE bids.auction=\"" + auctionID + "\"", new CosmosQueryRequestOptions(), BidDAO.class);
+        bids.close();
 		try (Jedis jedis = RedisCache.getCachePool().getResource()) {
 			ObjectMapper mapper = new ObjectMapper();
 			for(BidDAO item : pi)
@@ -38,10 +41,10 @@ public class BidRepository implements IBidGateway {
 
     @Override
     public CosmosItemResponse<BidDAO> addBid(BidDAO bidDAO, String auctionID) {
-        CosmosContainer bids = getContainer();
         String id = "0:" + System.currentTimeMillis();
         bidDAO.setId(id);
-        CosmosItemResponse<BidDAO> res = bids.createItem(bidDAO);
+        CosmosItemResponse<BidDAO> res = bids.getContainer().createItem(bidDAO);
+        bids.close();
 		if(res.getStatusCode() < 300) {
 			try (Jedis jedis = RedisCache.getCachePool().getResource()) {
 				ObjectMapper mapper = new ObjectMapper();

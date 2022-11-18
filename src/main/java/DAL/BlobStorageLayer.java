@@ -1,6 +1,7 @@
 package main.java.DAL;
 
 import com.azure.core.util.BinaryData;
+import com.azure.cosmos.implementation.changefeed.CancellationToken;
 import com.azure.storage.blob.BlobClient;
 import com.azure.storage.blob.BlobContainerClient;
 import com.azure.storage.blob.BlobContainerClientBuilder;
@@ -31,7 +32,7 @@ public class BlobStorageLayer {
     public String upload(String blobID, BinaryData contents) {
         BlobClient b = getBlobClient(blobID);
         b.upload(contents);
-        return b.getBlobUrl();
+        return b.getBlobName();
     }
 
     public BinaryData download(String blobID) {

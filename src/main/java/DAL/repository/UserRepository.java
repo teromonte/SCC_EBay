@@ -1,6 +1,5 @@
 package main.java.DAL.repository;
 
-import com.azure.cosmos.CosmosContainer;
 import com.azure.cosmos.models.CosmosItemRequestOptions;
 import com.azure.cosmos.models.CosmosItemResponse;
 import com.azure.cosmos.models.CosmosQueryRequestOptions;
@@ -14,21 +13,24 @@ import main.java.models.DAO.UserDAO;
 import redis.clients.jedis.Jedis;
 
 public class UserRepository implements IUserGateway {
+    private CosmosDBLayer users;
+
 
     public UserRepository() {
+        this.users = getDBLayer();
     }
 
-    private CosmosContainer getContainer() {
+    private CosmosDBLayer getDBLayer() {
         CosmosDBLayer db = CosmosDBLayer.getInstance();
         db.init(CosmosDBLayer.USER_CONTAINER);
-        return db.getContainer();
+        return db;
     }
 
     @Override
     public CosmosItemResponse<Object> delUserById(String id) {
-        CosmosContainer users = getContainer();
         PartitionKey key = new PartitionKey(id);
-        CosmosItemResponse<Object> res = users.deleteItem(id, key, new CosmosItemRequestOptions());
+        CosmosItemResponse<Object> res = users.getContainer().deleteItem(id, key, new CosmosItemRequestOptions());
+        users.close();
         if (res.getStatusCode() < 300) {
             try (Jedis jedis = RedisCache.getCachePool().getResource()) {
                 jedis.del("user:" + id);
@@ -42,19 +44,16 @@ public class UserRepository implements IUserGateway {
 
     @Override
     public CosmosItemResponse<UserDAO> putUser(UserDAO user) {
-        CosmosContainer users = getContainer();
         CosmosItemResponse<UserDAO> res;
-
         try {
             var u = getUserById(user.getId());
             PartitionKey key = new PartitionKey(user.getId());
-            res = users.replaceItem(user, user.getId(), key, new CosmosItemRequestOptions());
+            res = users.getContainer().replaceItem(user, user.getId(), key, new CosmosItemRequestOptions());
 
         } catch (Exception e) {
-            String id = "0:" + System.currentTimeMillis();
-            user.setId(id);
-            res = users.createItem(user);
+            res = users.getContainer().createItem(user);
         }
+        users.close();
         if (res.getStatusCode() < 300) {
             try (Jedis jedis = RedisCache.getCachePool().getResource()) {
                 ObjectMapper mapper = new ObjectMapper();
@@ -68,13 +67,17 @@ public class UserRepository implements IUserGateway {
 
     @Override
     public CosmosPagedIterable<UserDAO> getUserById(String id) {
-        CosmosContainer users = getContainer();
-        return users.queryItems("SELECT * FROM users WHERE users.id=\"" + id + "\"", new CosmosQueryRequestOptions(), UserDAO.class);
+        var res = users.getContainer().queryItems("SELECT * FROM users WHERE users.id=\"" + id + "\"", new CosmosQueryRequestOptions(), UserDAO.class);
+        users.close();
+
+        return res;
     }
 
     @Override
     public CosmosPagedIterable<UserDAO> getUsers() {
-        CosmosContainer users = getContainer();
-        return users.queryItems("SELECT * FROM users ", new CosmosQueryRequestOptions(), UserDAO.class);
+        var res = users.getContainer().queryItems("SELECT * FROM users ", new CosmosQueryRequestOptions(), UserDAO.class);
+        users.close();
+
+        return res;
     }
 }

@@ -1,5 +1,5 @@
 config:
-  target: 'https://scc-backend-55355.azurewebsites.net/rest'
+  target: 'https://scc23appnortheurope4204.azurewebsites.net/rest'
   http:
     timeout: 10
   plugins:
@@ -209,7 +209,7 @@ scenarios:
             beforeRequest: "uploadImageBody"
             capture: 
               regexp: "(.+)"
-              as: "imageId"              # capture the reply as image id to be used in function creation
+              as: "imageId"              # capture the reply as image id to be used in uction creation
             ifTrue: "nextAction == 3"
         - post:                          # Create auction
             url: "/auction"
