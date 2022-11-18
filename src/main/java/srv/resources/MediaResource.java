@@ -20,8 +20,7 @@ public class MediaResource {
     @Consumes(MediaType.APPLICATION_OCTET_STREAM)
     @Produces(MediaType.APPLICATION_JSON)
     public Response upload(byte[] contents) {
-        UploadMediaUseCase uploadMediaUseCase = new UploadMediaUseCase();
-        var res = uploadMediaUseCase.uploadMedia(contents);
+        var res = UploadMediaUseCase.uploadMedia(contents);
         return Response.ok(res).build();
     }
 

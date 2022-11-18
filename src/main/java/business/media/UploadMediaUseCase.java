@@ -7,16 +7,12 @@ import main.java.utils.Hash;
 public class UploadMediaUseCase {
     private static final String IMAGE_FORMAT_NAME = ".jpeg";
 
-    BlobStorageLayer blobStorageLayer;
-
-    public UploadMediaUseCase() {
-        blobStorageLayer = new BlobStorageLayer();
-    }
-
-    public String uploadMedia(byte[] contents) {
+    public static String uploadMedia(byte[] contents) {
+        BlobStorageLayer blobStorageLayer = new BlobStorageLayer();
         BinaryData binaryData = BinaryData.fromBytes(contents);
-        String blobID = Hash.of(contents);
+        String blobID = Hash.of(System.currentTimeMillis());
         blobID = blobID.concat(IMAGE_FORMAT_NAME);
         return blobStorageLayer.upload(blobID, binaryData);
+
     }
 }

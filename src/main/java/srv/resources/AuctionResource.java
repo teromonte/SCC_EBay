@@ -39,10 +39,15 @@ public class AuctionResource {
     @Path("/listAuctionsAboutToClose")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public String listAuctionsAboutToClose() {
-        List<String> res = ListAuctionsAboutToCloseUseCase.cacheListAuctionsAboutToClose();
-        if (res != null) return res.toString();
-        return ListAuctionsAboutToCloseUseCase.listAuctionsAboutToClose().stream().toList().toString();
+    public Response listAuctionsAboutToClose() {
+        try {
+            List<String> res = ListAuctionsAboutToCloseUseCase.cacheListAuctionsAboutToClose();
+            return Response.ok(res).build();
+        } catch (Exception e) {
+            var res = ListAuctionsAboutToCloseUseCase.listAuctionsAboutToClose().stream().toList();
+            return Response.ok(res).build();
+        }
+
     }
 
     @Path("/{auctionID}/bid")
@@ -62,23 +67,27 @@ public class AuctionResource {
     @Path("/{auctionID}/bid")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public String listBid(@PathParam("auctionID") String auctionID) {
+    public Response listBid(@PathParam("auctionID") String auctionID) {
         try {
-            return ListBidsUseCase.cacheListBids(auctionID).toString();
+            var res = ListBidsUseCase.cacheListBids(auctionID).toString();
+            return Response.ok(res).build();
 
         } catch (Exception e) {
-            return ListBidsUseCase.listBids(auctionID).stream().toList().toString();
+            var res = ListBidsUseCase.listBids(auctionID).stream().toList().toString();
+            return Response.ok(res).build();
         }
     }
 
     @Path("/{auctionID}/question")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public String listQuestion(@PathParam("auctionID") String auctionID) {
+    public Response listQuestion(@PathParam("auctionID") String auctionID) {
         try {
-            return ListQuestionsUseCase.cacheListQuestions(auctionID).toString();
+            var res = ListQuestionsUseCase.cacheListQuestions(auctionID).toString();
+            return Response.ok(res).build();
         } catch (Exception e) {
-            return ListQuestionsUseCase.listQuestions(auctionID).stream().toList().toString();
+            var res = ListQuestionsUseCase.listQuestions(auctionID).stream().toList().toString();
+            return Response.ok(res).build();
         }
     }
 
