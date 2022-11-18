@@ -50,7 +50,7 @@ scenarios:
               description: "{{ description }}"
               title: "{{ title }}"
               owner: "{{ user }}"
-              imageId: "{{ imageId }}"
+              image: "{{ imageId }}"
               endTime: "{{ endTime }}"
               minimumPrice: "{{ minimumPrice }}"
               status: "{{ status }}"
@@ -77,7 +77,7 @@ scenarios:
                 Content-Type: application/json
                 Accept: application/json
               json:
-                auctionId: "{{ auctionId }}"
+                auction: "{{ auctionId }}"
                 user: "{{ user }}"
                 value: "{{ value }}"
           count: "{{ numBids }}"   

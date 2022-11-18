@@ -9,22 +9,22 @@ public class BidDAO {
     private String _rid;
     private String _ts;
     private String id;
-    private String auction;
+    private String auctionId;
     private String user;
-    private String value;
+    private float value;
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSX")
     private Date time;
 
-    public BidDAO(String id, String auction, String user, String value, Date time) {
+    public BidDAO(String id, String auctionId, String user, float value, Date time) {
         this.id = id;
-        this.auction = auction;
+        this.auctionId = auctionId;
         this.user = user;
         this.value = value;
         this.time = time;
     }
 
     public BidDAO(Bid bid) {
-        this(bid.getId(), bid.getAuction(), bid.getUser(), bid.getValue(), bid.getTime());
+        this(null,bid.getAuction(), bid.getUser(), bid.getValue(), null);
     }
 
     public BidDAO() {
@@ -47,10 +47,6 @@ public class BidDAO {
         this._ts = _ts;
     }
 
-    @Override
-    public String toString() {
-        return "BidDAO{" + "_rid='" + _rid + '\'' + ", _ts='" + _ts + '\'' + ", id='" + id + '\'' + ", auction='" + auction + '\'' + ", user='" + user + '\'' + ", value='" + value + '\'' + ", time=" + time + '}';
-    }
 
     public Date getTime() {
         return time;
@@ -69,11 +65,11 @@ public class BidDAO {
     }
 
     public String getAuction() {
-        return auction;
+        return auctionId;
     }
 
-    public void setAuction(String auction) {
-        this.auction = auction;
+    public void setAuction(String asd) {
+        this.auctionId = asd;
     }
 
     public String getUser() {
@@ -84,11 +80,11 @@ public class BidDAO {
         this.user = user;
     }
 
-    public String getValue() {
+    public float getValue() {
         return value;
     }
 
-    public void setValue(String value) {
+    public void setValue(float value) {
         this.value = value;
     }
 }

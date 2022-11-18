@@ -9,7 +9,6 @@ public class CosmosDBLayer {
     public static final String BID_CONTAINER = "bids";
     public static final String QUESTION_CONTAINER = "questions";
     public static final String AUCTION_CONTAINER = "auctions";
-    public static final String LOGIN_CONTAINER = "logins";
     private static final String CONNECTION_URL = "https://scc222355355.documents.azure.com:443/";
     private static final String DB_KEY = "7MeuNBZBJYNkqB7orse0LBoWQkxZtRsSZsweb6lJ1QoLPb452hN4XjECI2mIfTIVA44Fyga6kAoPYeT8OkIuSQ==";
     private static final String DB_NAME = "scc2223db";
@@ -23,8 +22,6 @@ public class CosmosDBLayer {
     }
 
     public static synchronized CosmosDBLayer getInstance() {
-        if (instance != null)
-            return instance;
 
         Locale.setDefault(Locale.US);
 

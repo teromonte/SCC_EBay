@@ -1,19 +1,21 @@
 package main.java.DAL.repository;
 
-import com.azure.cosmos.CosmosContainer;
-import com.azure.cosmos.models.CosmosItemResponse;
 import com.azure.cosmos.models.CosmosQueryRequestOptions;
 import com.azure.cosmos.util.CosmosPagedIterable;
-import redis.clients.jedis.Jedis;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import main.java.DAL.CosmosDBLayer;
 import main.java.DAL.RedisCache;
 import main.java.DAL.gateway.IBidGateway;
 import main.java.models.DAO.BidDAO;
+import redis.clients.jedis.Jedis;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class BidRepository implements IBidGateway {
 
     private CosmosDBLayer bids;
+
     public BidRepository() {
         this.bids = getContainer();
     }
@@ -27,32 +29,37 @@ public class BidRepository implements IBidGateway {
 
     @Override
     public CosmosPagedIterable<BidDAO> listBids(String auctionID) {
-		CosmosPagedIterable<BidDAO> pi = bids.getContainer().queryItems("SELECT * FROM bids WHERE bids.auction=\"" + auctionID + "\"", new CosmosQueryRequestOptions(), BidDAO.class);
+        CosmosPagedIterable<BidDAO> pi = bids.getContainer().queryItems("SELECT * FROM bids WHERE bids.auction=\"" + auctionID + "\"", new CosmosQueryRequestOptions(), BidDAO.class);
         bids.close();
-		try (Jedis jedis = RedisCache.getCachePool().getResource()) {
-			ObjectMapper mapper = new ObjectMapper();
-			for(BidDAO item : pi)
-			    jedis.rpush("bidL:" + auctionID, mapper.writeValueAsString(item));
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+        try (Jedis jedis = RedisCache.getCachePool().getResource()) {
+            ObjectMapper mapper = new ObjectMapper();
+            for (BidDAO item : pi)
+                jedis.rpush("bidL:" + auctionID, mapper.writeValueAsString(item));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return pi;
     }
 
     @Override
-    public CosmosItemResponse<BidDAO> addBid(BidDAO bidDAO, String auctionID) {
-        String id = "0:" + System.currentTimeMillis();
+    public BidDAO addBid(BidDAO bidDAO, String auctionID) {
+        String id = "Bid:" + System.currentTimeMillis();
         bidDAO.setId(id);
-        CosmosItemResponse<BidDAO> res = bids.getContainer().createItem(bidDAO);
+
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSX");
+        Date date = new Date();
+
+        bidDAO.setTime(date);
+        BidDAO res = bids.getContainer().createItem(bidDAO).getItem();
         bids.close();
-		if(res.getStatusCode() < 300) {
-			try (Jedis jedis = RedisCache.getCachePool().getResource()) {
-				ObjectMapper mapper = new ObjectMapper();
-				jedis.set("bid:"+bidDAO.getId(), mapper.writeValueAsString(bidDAO));
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-		return res;
+        if (res != null) {
+            try (Jedis jedis = RedisCache.getCachePool().getResource()) {
+                ObjectMapper mapper = new ObjectMapper();
+                jedis.set("bid:" + res.getId(), mapper.writeValueAsString(res));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return res;
     }
 }

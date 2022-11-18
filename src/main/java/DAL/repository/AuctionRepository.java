@@ -5,15 +5,15 @@ import com.azure.cosmos.models.CosmosQueryRequestOptions;
 import com.azure.cosmos.models.PartitionKey;
 import com.azure.cosmos.util.CosmosPagedIterable;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.ws.rs.core.Response;
 import main.java.DAL.CosmosDBLayer;
 import main.java.DAL.RedisCache;
-import jakarta.ws.rs.core.Response;
 import main.java.DAL.gateway.IAuctionGateway;
 import main.java.models.DAO.AuctionDAO;
 import main.java.utils.GenericExceptionMapper;
 import redis.clients.jedis.Jedis;
 
-import java.util.NoSuchElementException;
+import java.util.Random;
 
 public class AuctionRepository implements IAuctionGateway {
 
@@ -33,24 +33,25 @@ public class AuctionRepository implements IAuctionGateway {
     public Response putAuction(AuctionDAO auction) {
         AuctionDAO res;
         GenericExceptionMapper g = new GenericExceptionMapper();
-        try {
-            var u = getAuctionById(auction.getId()).stream().findFirst().get();
-            PartitionKey key = new PartitionKey(auction.getId());
-            auction.setId(u.getId());
-            auctions = getDBLayer();
-            res = auctions.getContainer().replaceItem(auction, u.getId(), key, new CosmosItemRequestOptions()).getItem();
-        } catch (NoSuchElementException e) {
+
+        if (auction.getId() == null) {
+            Random rand = new Random();
+            auction.setId(rand.nextInt(1000) + ":" +auction.getOwner());
             auctions = getDBLayer();
             res = auctions.getContainer().createItem(auction).getItem();
-
-        } catch (Exception e) {
             auctions.close();
-
-
-            return g.toResponse(e);
-
+        } else {
+            try {
+                PartitionKey key = new PartitionKey(auction.getId());
+                auction.setId(auction.getId());
+                auctions = getDBLayer();
+                res = auctions.getContainer().replaceItem(auction, auction.getId(), key, new CosmosItemRequestOptions()).getItem();
+                auctions.close();
+            } catch (Exception e) {
+                auctions.close();
+                return g.toResponse(e);
+            }
         }
-        auctions.close();
 
         if (res != null) {
             try (Jedis jedis = RedisCache.getCachePool().getResource()) {

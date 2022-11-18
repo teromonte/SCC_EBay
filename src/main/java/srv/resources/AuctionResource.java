@@ -10,12 +10,10 @@ import main.java.business.auction.ListAuctionsFromUserUseCase;
 import main.java.business.bid.AddBidUseCase;
 import main.java.business.bid.ListBidsUseCase;
 import main.java.business.question.AddQuestionUseCase;
+import main.java.business.question.AddReplyUseCase;
 import main.java.business.question.ListQuestionsUseCase;
 import main.java.business.session.CheckCookieUseCase;
-import main.java.models.entities.Auction;
-import main.java.models.entities.Bid;
-import main.java.models.entities.Question;
-import main.java.models.entities.Session;
+import main.java.models.entities.*;
 import main.java.utils.GenericExceptionMapper;
 
 import java.util.List;
@@ -32,11 +30,9 @@ public class AuctionResource {
     public Response addAuction(@CookieParam("scc:session") Cookie session, Auction auction) {
         try {
             Session s = CheckCookieUseCase.checkCookieUser(session, auction.getOwner());
-            auction.setOwner(s.getUser());
             return AddAuctionUseCase.addAuction(auction);
         } catch (Exception e) {
-            GenericExceptionMapper c = new GenericExceptionMapper();
-            return c.toResponse(e);
+            return Response.accepted(e).build();
         }
 
     }
@@ -61,8 +57,14 @@ public class AuctionResource {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public String addBid(Bid bid, @PathParam("auctionID") String auctionID) {
-        return AddBidUseCase.addBid(bid, auctionID).getItem().toString();
+    public Response addBid(@CookieParam("scc:session") Cookie session, Bid bid, @PathParam("auctionID") String auctionID) {
+        try {
+            Session s = CheckCookieUseCase.checkCookieUser(session, bid.getUser());
+            return AddBidUseCase.addBid(bid, auctionID);
+        } catch (Exception e) {
+            GenericExceptionMapper g = new GenericExceptionMapper();
+            return g.toResponse(e);
+        }
     }
 
     @Path("/{auctionID}/bid")
@@ -87,8 +89,28 @@ public class AuctionResource {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public String addQuestion(Question question, @PathParam("auctionID") String auctionID) {
-        return AddQuestionUseCase.addQuestion(question, auctionID).getItem().toString();
+    public Response addQuestion(@CookieParam("scc:session") Cookie session, Question question, @PathParam("auctionID") String auctionID) {
+        try {
+            Session s = CheckCookieUseCase.checkCookieUser(session, question.getUser());
+            return AddQuestionUseCase.addQuestion(question, auctionID);
+        } catch (Exception e) {
+            GenericExceptionMapper g = new GenericExceptionMapper();
+            return g.toResponse(e);
+        }
+    }
+
+    @Path("/{auctionID}/question/{questionID}/reply")
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response addReply(@CookieParam("scc:session") Cookie session, Reply reply, @PathParam("auctionID") String auctionID, @PathParam("questionID") String questionID) {
+        try {
+            Session s = CheckCookieUseCase.checkCookie(session);
+            return AddReplyUseCase.addReply(reply, auctionID, questionID, s.getUser());
+        } catch (Exception e) {
+            GenericExceptionMapper g = new GenericExceptionMapper();
+            return g.toResponse(e);
+        }
     }
 
 }

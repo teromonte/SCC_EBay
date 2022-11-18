@@ -8,5 +8,5 @@ import main.java.models.entities.Bid;
 public interface IBidGateway {
     public CosmosPagedIterable<BidDAO> listBids(String auctionID);
 
-    public CosmosItemResponse<BidDAO> addBid(BidDAO bid, String auctionID);
+    public BidDAO addBid(BidDAO bid, String auctionID);
 }

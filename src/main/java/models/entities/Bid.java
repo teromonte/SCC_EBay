@@ -5,52 +5,26 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import java.util.Date;
 
 public class Bid {
-    private String id; // code
-    private String auction; // code
+    private String auction;
     private String user;
-    private String value;
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSX")
-    private Date time;
+    private float value;
 
     public Bid() {
         super();
     }
 
-    public Bid(String id, String auction, String user, String value, Date time) {
-        this.id = id;
-        this.auction = auction;
+    public Bid(String auctionId, String user, float value) {
+        this.auction = auctionId;
         this.user = user;
         this.value = value;
-        this.time = time;
-    }
-
-    @Override
-    public String toString() {
-        return "Bid{" + "id='" + id + '\'' + ", auction='" + auction + '\'' + ", user='" + user + '\'' + ", value='" + value + '\'' + ", time=" + time + '}';
-    }
-
-    public Date getTime() {
-        return time;
-    }
-
-    public void setTime(Date time) {
-        this.time = time;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getAuction() {
         return auction;
     }
 
-    public void setAuction(String auction) {
-        this.auction = auction;
+    public void setAuction(String auctionId) {
+        this.auction = auctionId;
     }
 
     public String getUser() {
@@ -61,11 +35,11 @@ public class Bid {
         this.user = user;
     }
 
-    public String getValue() {
+    public float getValue() {
         return value;
     }
 
-    public void setValue(String value) {
+    public void setValue(float value) {
         this.value = value;
     }
 

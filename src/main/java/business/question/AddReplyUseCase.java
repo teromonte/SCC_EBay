@@ -8,20 +8,20 @@ import main.java.DAL.repository.AuctionRepository;
 import main.java.DAL.repository.QuestionRepository;
 import main.java.models.DAO.AuctionDAO;
 import main.java.models.DAO.QuestionDAO;
-import main.java.models.entities.Question;
+import main.java.models.entities.Reply;
 
-public class AddQuestionUseCase {
-
-    public static Response addQuestion(Question question, String auctionID) throws JsonProcessingException {
+public class AddReplyUseCase {
+    public static Response addReply(Reply reply, String auctionID, String questionID, String user) throws JsonProcessingException {
         IQuestionGateway questionGateway = new QuestionRepository();
         IAuctionGateway auctionGateway = new AuctionRepository();
-        QuestionDAO questionDAO = new QuestionDAO(question);
 
         try {
             AuctionDAO a = auctionGateway.getAuctionById(auctionID).stream().findFirst().get();
+            QuestionDAO q = questionGateway.getQuestionById(questionID);
 
-            QuestionDAO q = questionGateway.addQuestion(questionDAO, a.getId()).getItem();
-
+            if (a.getOwner().equals(user)) {
+                questionGateway.addReply(reply.getReply(), q);
+            }
             return Response.ok(q).build();
         } catch (Exception e) {
             throw e;
@@ -29,3 +29,4 @@ public class AddQuestionUseCase {
 
     }
 }
+
