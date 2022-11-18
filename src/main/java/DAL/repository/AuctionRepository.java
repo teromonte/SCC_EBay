@@ -7,6 +7,7 @@ import com.azure.cosmos.util.CosmosPagedIterable;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import main.java.DAL.CosmosDBLayer;
 import main.java.DAL.RedisCache;
+import main.java.DAL.cache.CachePlus;
 import jakarta.ws.rs.core.Response;
 import main.java.DAL.gateway.IAuctionGateway;
 import main.java.models.DAO.AuctionDAO;
@@ -76,14 +77,7 @@ public class AuctionRepository implements IAuctionGateway {
     public CosmosPagedIterable<AuctionDAO> listAuctionsAboutToClose() {
         CosmosPagedIterable<AuctionDAO> pi = auctions.getContainer().queryItems("SELECT * FROM auctions", new CosmosQueryRequestOptions(), AuctionDAO.class);
         auctions.close();
-        try (Jedis jedis = RedisCache.getCachePool().getResource()) {
-            ObjectMapper mapper = new ObjectMapper();
-            for (AuctionDAO item : pi)
-                jedis.rpush("auctionL", mapper.writeValueAsString(item));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return pi;
+        return CachePlus.cacheThenCPI(pi, null, CachePlus.AUCTION_LIST);
     }
 
     @Override
