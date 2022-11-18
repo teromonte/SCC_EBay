@@ -12,6 +12,8 @@ import main.java.DAL.gateway.IAuctionGateway;
 import main.java.models.DAO.AuctionDAO;
 import main.java.utils.GenericExceptionMapper;
 import redis.clients.jedis.Jedis;
+import main.java.DAL.cache.CachePlus;
+
 
 import java.util.Random;
 
@@ -77,14 +79,7 @@ public class AuctionRepository implements IAuctionGateway {
     public CosmosPagedIterable<AuctionDAO> listAuctionsAboutToClose() {
         CosmosPagedIterable<AuctionDAO> pi = auctions.getContainer().queryItems("SELECT * FROM auctions", new CosmosQueryRequestOptions(), AuctionDAO.class);
         auctions.close();
-        try (Jedis jedis = RedisCache.getCachePool().getResource()) {
-            ObjectMapper mapper = new ObjectMapper();
-            for (AuctionDAO item : pi)
-                jedis.rpush("auctionL", mapper.writeValueAsString(item));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return pi;
+        return CachePlus.cacheThenCPI(pi, null, CachePlus.AUCTION_LIST);
     }
 
     @Override

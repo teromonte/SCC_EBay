@@ -8,6 +8,7 @@ import main.java.DAL.RedisCache;
 import main.java.DAL.gateway.IBidGateway;
 import main.java.models.DAO.BidDAO;
 import redis.clients.jedis.Jedis;
+import main.java.DAL.cache.CachePlus;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -31,14 +32,8 @@ public class BidRepository implements IBidGateway {
     public CosmosPagedIterable<BidDAO> listBids(String auctionID) {
         CosmosPagedIterable<BidDAO> pi = bids.getContainer().queryItems("SELECT * FROM bids WHERE bids.auction=\"" + auctionID + "\"", new CosmosQueryRequestOptions(), BidDAO.class);
         bids.close();
-        try (Jedis jedis = RedisCache.getCachePool().getResource()) {
-            ObjectMapper mapper = new ObjectMapper();
-            for (BidDAO item : pi)
-                jedis.rpush("bidL:" + auctionID, mapper.writeValueAsString(item));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return pi;
+        return CachePlus.cacheThenCPI(pi, auctionID, CachePlus.BID_LIST);
+
     }
 
     @Override

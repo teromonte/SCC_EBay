@@ -8,6 +8,7 @@ import com.azure.cosmos.models.PartitionKey;
 import com.azure.cosmos.util.CosmosPagedIterable;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import main.java.DAL.cache.CachePlus;
 import main.java.DAL.CosmosDBLayer;
 import main.java.DAL.RedisCache;
 import main.java.DAL.gateway.IQuestionGateway;
@@ -28,14 +29,8 @@ public class QuestionRepository implements IQuestionGateway {
     public CosmosPagedIterable<QuestionDAO> listQuestions(String auctionID) {
         CosmosContainer questions = getContainer();
         CosmosPagedIterable<QuestionDAO> pi = questions.queryItems("SELECT * FROM questions WHERE questions.auction=\"" + auctionID + "\"", new CosmosQueryRequestOptions(), QuestionDAO.class);
-        try (Jedis jedis = RedisCache.getCachePool().getResource()) {
-            ObjectMapper mapper = new ObjectMapper();
-            for (QuestionDAO item : pi)
-                jedis.rpush("questionL:" + auctionID, mapper.writeValueAsString(item));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return pi;
+        return CachePlus.cacheThenCPI(pi, auctionID, CachePlus.QUESTION_LIST);
+
     }
 
     @Override
