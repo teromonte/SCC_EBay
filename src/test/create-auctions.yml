@@ -99,7 +99,7 @@ scenarios:
                 Content-Type: application/json
                 Accept: application/json
               json:
-                auctionId: "{{ auctionId }}"
+                auction: "{{ auctionId }}"
                 user: "{{ user }}"
                 text: "{{ text }}"
               capture:                     # Capturing question id and store it in variable questionId

@@ -3,6 +3,7 @@ package main.java.srv.resources;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
+import main.java.business.auction.ListAuctionsFromUserUseCase;
 import main.java.business.user.AddUserUseCase;
 import main.java.business.user.CheckAuthenticationUseCase;
 import main.java.business.user.DeleteUserByIDUseCase;
@@ -37,6 +38,14 @@ public class UserResource {
             return g.toResponse(e);
 
         }
+    }
+
+    @Path("/{userID}/auctions")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public String listAuctionsFromUser(@PathParam("userID") String userID) {
+
+        return ListAuctionsFromUserUseCase.listAuctionsFromUser(userID).stream().toList().toString();
     }
 
     @Path("/{id}")

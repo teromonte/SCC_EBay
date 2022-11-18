@@ -6,7 +6,6 @@ import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import main.java.business.auction.AddAuctionUseCase;
 import main.java.business.auction.ListAuctionsAboutToCloseUseCase;
-import main.java.business.auction.ListAuctionsFromUserUseCase;
 import main.java.business.bid.AddBidUseCase;
 import main.java.business.bid.ListBidsUseCase;
 import main.java.business.question.AddQuestionUseCase;
@@ -46,13 +45,6 @@ public class AuctionResource {
         return ListAuctionsAboutToCloseUseCase.listAuctionsAboutToClose().stream().toList().toString();
     }
 
-    @Path("/listAuctionsFromUser/{userID}")
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    public String listAuctionsFromUser(@PathParam("userID") String userID) {
-        return ListAuctionsFromUserUseCase.listAuctionsFromUser(userID).stream().toList().toString();
-    }
-
     @Path("/{auctionID}/bid")
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
@@ -71,18 +63,23 @@ public class AuctionResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public String listBid(@PathParam("auctionID") String auctionID) {
-        List<String> res = ListBidsUseCase.cacheListBids(auctionID);
-        if (res != null) return res.toString();
-        return ListBidsUseCase.listBids(auctionID).stream().toList().toString();
+        try {
+            return ListBidsUseCase.cacheListBids(auctionID).toString();
+
+        } catch (Exception e) {
+            return ListBidsUseCase.listBids(auctionID).stream().toList().toString();
+        }
     }
 
     @Path("/{auctionID}/question")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public String listQuestion(@PathParam("auctionID") String auctionID) {
-        List<String> res = ListQuestionsUseCase.cacheListQuestions(auctionID);
-        if (res != null) return res.toString();
-        return ListQuestionsUseCase.listQuestions(auctionID).stream().toList().toString();
+        try {
+            return ListQuestionsUseCase.cacheListQuestions(auctionID).toString();
+        } catch (Exception e) {
+            return ListQuestionsUseCase.listQuestions(auctionID).stream().toList().toString();
+        }
     }
 
     @Path("/{auctionID}/question")
