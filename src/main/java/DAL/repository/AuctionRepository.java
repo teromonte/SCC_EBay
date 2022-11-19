@@ -84,9 +84,9 @@ public class AuctionRepository implements IAuctionGateway {
 
     @Override
     public CosmosPagedIterable<AuctionDAO> listAuctionsFromUser(String userID) {
-        var res = auctions.getContainer().queryItems("SELECT * FROM auctions WHERE auctions.owner=\"" + userID + "\"", new CosmosQueryRequestOptions(), AuctionDAO.class);
+        CosmosPagedIterable<AuctionDAO> pi = auctions.getContainer().queryItems("SELECT * FROM auctions WHERE auctions.owner=\"" + userID + "\"", new CosmosQueryRequestOptions(), AuctionDAO.class);
         auctions.close();
-        return res;
+        return CachePlus.cacheThenCPI(pi, userID, CachePlus.USER_AUCTIONS);
     }
 }
 

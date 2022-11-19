@@ -45,8 +45,13 @@ public class UserResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Response listAuctionsFromUser(@PathParam("userID") String userID) {
         try {
-            var res = ListAuctionsFromUserUseCase.listAuctionsFromUser(userID).stream().toList();
-            return Response.ok(res).build();
+            var res = ListAuctionsFromUserUseCase.cacheListAuctionsFromUser(userID);
+			if(res!=null)
+				return Response.ok(res).build();
+			else {
+				var res2 = ListAuctionsFromUserUseCase.listAuctionsFromUser(userID).stream().toList();
+				return Response.ok(res2).build();
+			}
         } catch (Exception e) {
             GenericExceptionMapper gem = new GenericExceptionMapper();
             return gem.toResponse(e);

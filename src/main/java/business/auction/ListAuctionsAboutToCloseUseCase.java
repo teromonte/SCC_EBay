@@ -14,7 +14,10 @@ public class ListAuctionsAboutToCloseUseCase {
         return auctionGateway.listAuctionsAboutToClose();
     }
 	
-	public static List<String> cacheListAuctionsAboutToClose(){
-		return CachePlus.cacheGet(CachePlus.AUCTION_LIST, null);
+	public static List<String> cacheListAuctionsAboutToClose() throws Exception {
+		List<String> res = CachePlus.cacheGet(CachePlus.AUCTION_LIST, null);
+		if(res==null)
+			throw new Exception("Not in cache");
+		return res;
     }
 }
