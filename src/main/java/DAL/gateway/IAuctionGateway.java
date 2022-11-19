@@ -8,7 +8,7 @@ import main.java.models.DAO.AuctionDAO;
 public interface IAuctionGateway {
     public Response putAuction(AuctionDAO auction);
 
-    public CosmosPagedIterable<AuctionDAO> getAuctionById(String id);
+    public AuctionDAO getAuctionById(String id);
 
     public CosmosPagedIterable<AuctionDAO> listAllAuctionsAboutToClose();
 

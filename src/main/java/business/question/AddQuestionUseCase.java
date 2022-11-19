@@ -18,7 +18,7 @@ public class AddQuestionUseCase {
         QuestionDAO questionDAO = new QuestionDAO(question);
 
         try {
-            AuctionDAO a = auctionGateway.getAuctionById(auctionID).stream().findFirst().get();
+            AuctionDAO a = auctionGateway.getAuctionById(auctionID);
 
             QuestionDAO q = questionGateway.addQuestion(questionDAO, a.getId()).getItem();
 

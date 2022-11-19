@@ -4,13 +4,74 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b469088-9480-470d-bb72-0267c4b9bd8d" name="Changes" comment="ListAuctionsAboutToCloseUseCase">
+    <list default="true" id="1b469088-9480-470d-bb72-0267c4b9bd8d" name="Changes" comment="ListAuctionsAboutToCloseUseCase fix">
+      <change afterPath="$PROJECT_DIR$/src/test/final/README" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/final/create-auctions.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/final/create-users.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.1.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.10.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.11.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.12.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.13.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.14.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.15.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.16.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.17.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.18.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.19.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.2.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.20.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.21.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.22.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.23.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.24.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.25.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.26.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.27.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.28.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.29.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.3.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.30.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.31.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.32.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.33.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.34.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.35.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.36.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.37.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.38.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.39.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.4.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.40.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.41.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.5.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.6.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.7.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.8.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.9.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/final/test-utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/final/workload1.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAL/cache/CachePlus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAL/cache/CachePlus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DAL/gateway/IAuctionGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAL/gateway/IAuctionGateway.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DAL/repository/AuctionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAL/repository/AuctionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAL/repository/BidRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAL/repository/BidRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAL/repository/QuestionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAL/repository/QuestionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAL/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAL/repository/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/business/auction/ListAuctionsAboutToCloseUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/auction/ListAuctionsAboutToCloseUseCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/srv/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/srv/MainApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/business/auction/ListAuctionsFromUserUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/auction/ListAuctionsFromUserUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/business/bid/AddBidUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/bid/AddBidUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/business/bid/ListBidsUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/bid/ListBidsUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/business/question/AddQuestionUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/question/AddQuestionUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/business/question/AddReplyUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/question/AddReplyUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/business/question/ListQuestionsUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/question/ListQuestionsUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/business/user/CheckAuthenticationUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/user/CheckAuthenticationUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/business/user/GetUserByIDUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/user/GetUserByIDUseCase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/srv/resources/AuctionResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/srv/resources/AuctionResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/srv/resources/ControlResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/srv/resources/ControlResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/srv/resources/UserResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/srv/resources/UserResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/report.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/reports/report.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/report.json.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/reports/report.json.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,6 +136,7 @@
       <recent name="$PROJECT_DIR$/src/main/java/data" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test/reports" />
       <recent name="$PROJECT_DIR$/.idea" />
       <recent name="$PROJECT_DIR$" />
     </key>
@@ -355,7 +417,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668867231971</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="ListAuctionsAboutToCloseUseCase fix">
+      <created>1668875732299</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1668875732299</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -376,7 +445,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="working 2" />
     <MESSAGE value="working 3" />
     <MESSAGE value="Added Models and DAOs and Resources" />
     <MESSAGE value="structure" />
@@ -401,6 +469,7 @@
     <MESSAGE value="refac" />
     <MESSAGE value="testes" />
     <MESSAGE value="ListAuctionsAboutToCloseUseCase" />
-    <option name="LAST_COMMIT_MESSAGE" value="ListAuctionsAboutToCloseUseCase" />
+    <MESSAGE value="ListAuctionsAboutToCloseUseCase fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="ListAuctionsAboutToCloseUseCase fix" />
   </component>
 </project>

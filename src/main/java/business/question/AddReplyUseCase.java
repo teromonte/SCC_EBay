@@ -16,7 +16,7 @@ public class AddReplyUseCase {
         IAuctionGateway auctionGateway = new AuctionRepository();
 
         try {
-            AuctionDAO a = auctionGateway.getAuctionById(auctionID).stream().findFirst().get();
+            AuctionDAO a = auctionGateway.getAuctionById(auctionID);
             QuestionDAO q = questionGateway.getQuestionById(questionID);
 
             if (a.getOwner().equals(user)) {

@@ -59,8 +59,17 @@ public class UserResource {
     @Path("/{id}")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public String getUser(@PathParam("id") String id) {
-        return GetUserByIDUseCase.getUserByID(id).stream().findFirst().get().toString();
+    public Response getUser(@PathParam("id") String id) {
+        try {
+            var res = GetUserByIDUseCase.cacheGetUserByID(id);
+            return Response.ok(res).build();
+        } catch (NotFoundException e) {
+            var res = GetUserByIDUseCase.getUserByID(id).stream().findFirst().get();
+            return Response.ok(res).build();
+        } catch (Exception ee) {
+            GenericExceptionMapper g = new GenericExceptionMapper();
+            return g.toResponse(ee);
+        }
     }
 
     @Path("/{id}")

@@ -13,13 +13,13 @@ public class ControlResource
 {
 
 	/**
-	 * This methods just prints a string. It may be useful to check if the current 
+	 * These methods just prints a string. It may be useful to check if the current
  	 */
 	@Path("/version")
 	@GET
 	@Produces(MediaType.TEXT_PLAIN)
 	public String hello() {
-		return "v: Projeto SCC v2";
+		return "v: Projeto SCC final";
 	}
 
 }

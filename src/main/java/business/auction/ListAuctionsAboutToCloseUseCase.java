@@ -6,10 +6,9 @@ import main.java.DAL.gateway.IAuctionGateway;
 import main.java.DAL.repository.AuctionRepository;
 import main.java.models.DAO.AuctionDAO;
 
-import java.time.Instant;
-import java.util.Date;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
+
+import static main.java.srv.MainApplication.CACHE_FLAG;
 
 public class ListAuctionsAboutToCloseUseCase {
 
@@ -20,6 +19,7 @@ public class ListAuctionsAboutToCloseUseCase {
     }
 
     public static List<String> cacheListAuctionsAboutToClose() throws NotFoundException {
+        if (CACHE_FLAG) throw new NotFoundException();
         List<String> res = CachePlus.cacheGet(CachePlus.AUCTION_LIST, null);
         if (res == null) throw new NotFoundException("Not in cache");
         else if (res.isEmpty()) throw new NotFoundException("Not in cache");

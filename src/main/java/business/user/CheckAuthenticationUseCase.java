@@ -1,6 +1,7 @@
 package main.java.business.user;
 
 import jakarta.ws.rs.NotAuthorizedException;
+import jakarta.ws.rs.NotFoundException;
 import jakarta.ws.rs.core.NewCookie;
 import jakarta.ws.rs.core.Response;
 import main.java.DAL.cache.CachePlus;
@@ -16,10 +17,13 @@ import java.util.UUID;
 public class CheckAuthenticationUseCase {
     public static Response check(Login user) {
         IUserGateway userGateway = new UserRepository();
+
         UserDAO u;
         try {
+            u = CachePlus.cacheGet(user.getUser());
+
+        } catch (NotFoundException ee) {
             u = userGateway.getUserById(user.getUser()).stream().findFirst().get();
-            // Check pwd
         } catch (Exception e) {
             GenericExceptionMapper c = new GenericExceptionMapper();
             return c.toResponse(e);

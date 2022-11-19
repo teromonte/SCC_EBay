@@ -31,7 +31,7 @@ public class AuctionResource {
             Session s = CheckCookieUseCase.checkCookieUser(session, auction.getOwner());
             return AddAuctionUseCase.addAuction(auction);
         } catch (Exception e) {
-            return Response.accepted(e).build();
+            return Response.serverError().build();
         }
 
     }
@@ -73,7 +73,7 @@ public class AuctionResource {
     public Response listBid(@PathParam("auctionID") String auctionID) {
 
         try {
-            var res = ListBidsUseCase.cacheListBids(auctionID).toString();
+            var res = ListBidsUseCase.cacheListBids(auctionID);
             return Response.ok(res).build();
         } catch (NotFoundException e) {
             var res = ListBidsUseCase.listBids(auctionID).stream().toList();

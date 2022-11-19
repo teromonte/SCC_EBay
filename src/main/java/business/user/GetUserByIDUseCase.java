@@ -13,7 +13,7 @@ public class GetUserByIDUseCase {
         return userGateway.getUserById(id);
     }
 	
-	public static String cacheGetUserByID(String id) {
+	public static UserDAO cacheGetUserByID(String id) {
 		return CachePlus.cacheGet(id);
     }
 }

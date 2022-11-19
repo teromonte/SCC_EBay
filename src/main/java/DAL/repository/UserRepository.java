@@ -8,9 +8,12 @@ import com.azure.cosmos.util.CosmosPagedIterable;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import main.java.DAL.CosmosDBLayer;
 import main.java.DAL.RedisCache;
+import main.java.DAL.cache.CachePlus;
 import main.java.DAL.gateway.IUserGateway;
 import main.java.models.DAO.UserDAO;
 import redis.clients.jedis.Jedis;
+
+import static main.java.srv.MainApplication.CACHE_FLAG;
 
 public class UserRepository implements IUserGateway {
     private CosmosDBLayer users;
@@ -31,7 +34,7 @@ public class UserRepository implements IUserGateway {
         PartitionKey key = new PartitionKey(id);
         CosmosItemResponse<Object> res = users.getContainer().deleteItem(id, key, new CosmosItemRequestOptions());
         users.close();
-        if (res.getStatusCode() < 300) {
+        if (res.getStatusCode() < 300 && CACHE_FLAG) {
             try (Jedis jedis = RedisCache.getCachePool().getResource()) {
                 jedis.del("user:" + id);
                 jedis.del(CachePlus.AUCTION_LIST);
@@ -55,7 +58,7 @@ public class UserRepository implements IUserGateway {
             res = users.getContainer().createItem(user);
         }
         users.close();
-        if (res.getStatusCode() < 300) {
+        if (res.getStatusCode() < 300 && CACHE_FLAG) {
             try (Jedis jedis = RedisCache.getCachePool().getResource()) {
                 ObjectMapper mapper = new ObjectMapper();
                 jedis.set("user:" + user.getId(), mapper.writeValueAsString(user));
@@ -68,6 +71,7 @@ public class UserRepository implements IUserGateway {
 
     @Override
     public CosmosPagedIterable<UserDAO> getUserById(String id) {
+
         var res = users.getContainer().queryItems("SELECT * FROM users WHERE users.id=\"" + id + "\"", new CosmosQueryRequestOptions(), UserDAO.class);
         users.close();
 

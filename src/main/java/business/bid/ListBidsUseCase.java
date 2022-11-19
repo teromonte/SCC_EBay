@@ -9,6 +9,8 @@ import main.java.models.DAO.BidDAO;
 
 import java.util.List;
 
+import static main.java.srv.MainApplication.CACHE_FLAG;
+
 public class ListBidsUseCase {
 
     public static CosmosPagedIterable<BidDAO> listBids(String auctionID) {
@@ -16,7 +18,8 @@ public class ListBidsUseCase {
         return bidGateway.listBids(auctionID);
     }
 
-    public static List<String> cacheListBids(String auctionID) throws NotFoundException{
+    public static List<String> cacheListBids(String auctionID) throws NotFoundException {
+        if (CACHE_FLAG) throw new NotFoundException();
         List<String> res = CachePlus.cacheGet(CachePlus.BID_LIST, auctionID);
         if (res == null) throw new NotFoundException();
         else if (res.isEmpty()) throw new NotFoundException();

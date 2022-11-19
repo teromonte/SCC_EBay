@@ -20,7 +20,7 @@ public class AddBidUseCase {
         BidDAO bidDAO = new BidDAO(bid);
 
         try {
-            AuctionDAO auction = auctionGateway.getAuctionById(auctionID).stream().findFirst().get();
+            AuctionDAO auction = auctionGateway.getAuctionById(auctionID);
             if (auction.getStatus().equals("OPEN")) {
                 var res = bidGateway.addBid(bidDAO, auctionID);
                 return Response.ok(res).build();

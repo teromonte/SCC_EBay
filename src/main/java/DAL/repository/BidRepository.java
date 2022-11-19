@@ -5,13 +5,14 @@ import com.azure.cosmos.util.CosmosPagedIterable;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import main.java.DAL.CosmosDBLayer;
 import main.java.DAL.RedisCache;
+import main.java.DAL.cache.CachePlus;
 import main.java.DAL.gateway.IBidGateway;
 import main.java.models.DAO.BidDAO;
 import redis.clients.jedis.Jedis;
-import main.java.DAL.cache.CachePlus;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import static main.java.srv.MainApplication.CACHE_FLAG;
 
 public class BidRepository implements IBidGateway {
 
@@ -32,7 +33,7 @@ public class BidRepository implements IBidGateway {
     public CosmosPagedIterable<BidDAO> listBids(String auctionID) {
         CosmosPagedIterable<BidDAO> pi = bids.getContainer().queryItems("SELECT * FROM bids WHERE bids.auction=\"" + auctionID + "\"", new CosmosQueryRequestOptions(), BidDAO.class);
         bids.close();
-        CachePlus.cacheThenCPI(pi, auctionID, CachePlus.BID_LIST);
+        if (CACHE_FLAG) CachePlus.cacheThenCPI(pi, auctionID, CachePlus.BID_LIST);
         return pi;
 
     }
@@ -42,13 +43,11 @@ public class BidRepository implements IBidGateway {
         String id = "Bid:" + System.currentTimeMillis();
         bidDAO.setId(id);
 
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSX");
-        Date date = new Date();
+        bidDAO.setTime(new Date());
 
-        bidDAO.setTime(date);
         BidDAO res = bids.getContainer().createItem(bidDAO).getItem();
         bids.close();
-        if (res != null) {
+        if (res != null && CACHE_FLAG) {
             try (Jedis jedis = RedisCache.getCachePool().getResource()) {
                 ObjectMapper mapper = new ObjectMapper();
                 jedis.set("bid:" + res.getId(), mapper.writeValueAsString(res));

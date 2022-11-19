@@ -5,6 +5,7 @@ import com.azure.cosmos.models.CosmosQueryRequestOptions;
 import com.azure.cosmos.models.PartitionKey;
 import com.azure.cosmos.util.CosmosPagedIterable;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.ws.rs.NotFoundException;
 import jakarta.ws.rs.core.Response;
 import main.java.DAL.CosmosDBLayer;
 import main.java.DAL.RedisCache;
@@ -15,6 +16,8 @@ import main.java.utils.GenericExceptionMapper;
 import redis.clients.jedis.Jedis;
 
 import java.util.Random;
+
+import static main.java.srv.MainApplication.CACHE_FLAG;
 
 public class AuctionRepository implements IAuctionGateway {
 
@@ -37,7 +40,7 @@ public class AuctionRepository implements IAuctionGateway {
 
         if (auction.getId() == null) {
             Random rand = new Random();
-            auction.setId(rand.nextInt(1000) + ":" + auction.getOwner());
+            auction.setId(rand.nextInt(9999) + ":" + auction.getOwner());
             auctions = getDBLayer();
             res = auctions.getContainer().createItem(auction).getItem();
             auctions.close();
@@ -54,7 +57,7 @@ public class AuctionRepository implements IAuctionGateway {
             }
         }
 
-        if (res != null) {
+        if (res != null && CACHE_FLAG) {
             try (Jedis jedis = RedisCache.getCachePool().getResource()) {
                 ObjectMapper mapper = new ObjectMapper();
                 jedis.set("auction:" + auction.getId(), mapper.writeValueAsString(auction));
@@ -68,17 +71,21 @@ public class AuctionRepository implements IAuctionGateway {
     }
 
     @Override
-    public CosmosPagedIterable<AuctionDAO> getAuctionById(String id) {
-        var res = auctions.getContainer().queryItems("SELECT * FROM auctions WHERE auctions.id=\"" + id + "\"", new CosmosQueryRequestOptions(), AuctionDAO.class);
+    public AuctionDAO getAuctionById(String id) {
+        AuctionDAO a = null;
+        if (CACHE_FLAG) a = CachePlus.getAuction(id);
+        if (a == null)
+            a = auctions.getContainer().queryItems("SELECT * FROM auctions WHERE auctions.id=\"" + id + "\"", new CosmosQueryRequestOptions(), AuctionDAO.class).stream().findFirst().get();
+        if (a == null) throw new NotFoundException();
         auctions.close();
-        return res;
+        return a;
     }
 
     @Override
     public CosmosPagedIterable<AuctionDAO> listAllAuctionsAboutToClose() {
         CosmosPagedIterable<AuctionDAO> pi = auctions.getContainer().queryItems("SELECT TOP 20 * FROM auctions where auctions.status=\"OPEN\" order by auctions.endTime asc", new CosmosQueryRequestOptions(), AuctionDAO.class);
         auctions.close();
-        CachePlus.cacheThenCPI(pi, null, CachePlus.AUCTION_LIST);
+        if (CACHE_FLAG) CachePlus.cacheThenCPI(pi, null, CachePlus.AUCTION_LIST);
         return pi;
     }
 
@@ -94,7 +101,8 @@ public class AuctionRepository implements IAuctionGateway {
     public CosmosPagedIterable<AuctionDAO> listAuctionsFromUser(String userID) {
         CosmosPagedIterable<AuctionDAO> pi = auctions.getContainer().queryItems("SELECT * FROM auctions WHERE auctions.owner=\"" + userID + "\"", new CosmosQueryRequestOptions(), AuctionDAO.class);
         auctions.close();
-        return CachePlus.cacheThenCPI(pi, userID, CachePlus.USER_AUCTIONS);
+        if (CACHE_FLAG) CachePlus.cacheThenCPI(pi, userID, CachePlus.USER_AUCTIONS);
+        return pi;
     }
 }
 

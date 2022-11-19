@@ -9,6 +9,8 @@ import main.java.models.DAO.QuestionDAO;
 
 import java.util.List;
 
+import static main.java.srv.MainApplication.CACHE_FLAG;
+
 public class ListQuestionsUseCase {
 
     public static CosmosPagedIterable<QuestionDAO> listQuestions(String auctionID) {
@@ -17,6 +19,7 @@ public class ListQuestionsUseCase {
     }
 
     public static List<String> cacheListQuestions(String auctionID) throws NotFoundException {
+        if(!CACHE_FLAG) throw new NotFoundException();
         List<String> res = CachePlus.cacheGet(CachePlus.QUESTION_LIST, auctionID);
         if (res == null) throw new NotFoundException("Not in cache");
         else if (res.isEmpty()) throw new NotFoundException("Not in cache");
