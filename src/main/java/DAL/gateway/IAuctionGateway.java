@@ -10,7 +10,7 @@ public interface IAuctionGateway {
 
     public CosmosPagedIterable<AuctionDAO> getAuctionById(String id);
 
-    public CosmosPagedIterable<AuctionDAO> listAuctionsAboutToClose();
+    public CosmosPagedIterable<AuctionDAO> listAllAuctionsAboutToClose();
 
     public CosmosPagedIterable<AuctionDAO> listAllAuctionsOpen();
 
