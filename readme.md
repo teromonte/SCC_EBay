@@ -1,6 +1,7 @@
 change java version: sudo update-alternatives --config java
 
 deploy: mvn compile package azure-webapp:deploy
+mvn clean compile package azure-functions:deploy
 
 artillery run create-
 

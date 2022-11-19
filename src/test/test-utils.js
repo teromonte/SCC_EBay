@@ -287,11 +287,7 @@ function decideToReply(context, events, done) {
 function decideNextAction(context, events, done) {
 	delete context.vars.auctionId;
 	let rnd = Math.random()
-	if( rnd < 0.075)
-		context.vars.nextAction = 0; // browsing recent
-	else if( rnd < 0.15)
-		context.vars.nextAction = 1; // browsing popular
-	else if( rnd < 0.225)
+	if( rnd < 0.225)
 		context.vars.nextAction = 2; // browsing user
 	else if( rnd < 0.3)
 		context.vars.nextAction = 3; // create an auction
@@ -326,10 +322,6 @@ function decideNextAction(context, events, done) {
 			r = 1;
 		if( r == 2)
   			auct = context.vars.auctionsLst.sample();
-		else if( r == 1)
-  			auct = context.vars.recentLst.sample();
-		else if( r == 0)
-  			auct = context.vars.popularLst.sample();
 		if( auct == null) {
 			return decideNextAction(context,events,done);
 		}

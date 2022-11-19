@@ -44,7 +44,7 @@ public class AuctionResource {
             List<String> res = ListAuctionsAboutToCloseUseCase.cacheListAuctionsAboutToClose();
             return Response.ok(res).build();
         } catch (Exception e) {
-            var res = ListAuctionsAboutToCloseUseCase.listAuctionsAboutToClose().stream().toList();
+            var res = ListAuctionsAboutToCloseUseCase.listAuctionsAboutToClose();
             return Response.ok(res).build();
         }
 
@@ -68,14 +68,19 @@ public class AuctionResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response listBid(@PathParam("auctionID") String auctionID) {
+
         try {
             var res = ListBidsUseCase.cacheListBids(auctionID).toString();
             return Response.ok(res).build();
-
-        } catch (Exception e) {
-            var res = ListBidsUseCase.listBids(auctionID).stream().toList().toString();
+        } catch (NotFoundException e) {
+            var res = ListBidsUseCase.listBids(auctionID).stream().toList();
             return Response.ok(res).build();
+        } catch (Exception ee) {
+            GenericExceptionMapper g = new GenericExceptionMapper();
+            return g.toResponse(ee);
         }
+
+
     }
 
     @Path("/{auctionID}/question")
@@ -83,11 +88,14 @@ public class AuctionResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Response listQuestion(@PathParam("auctionID") String auctionID) {
         try {
-            var res = ListQuestionsUseCase.cacheListQuestions(auctionID).toString();
+            var res = ListQuestionsUseCase.cacheListQuestions(auctionID);
             return Response.ok(res).build();
-        } catch (Exception e) {
-            var res = ListQuestionsUseCase.listQuestions(auctionID).stream().toList().toString();
+        } catch (NotFoundException e) {
+            var res = ListQuestionsUseCase.listQuestions(auctionID).stream().toList();
             return Response.ok(res).build();
+        } catch (Exception ee) {
+            GenericExceptionMapper g = new GenericExceptionMapper();
+            return g.toResponse(ee);
         }
     }
 

@@ -33,7 +33,7 @@ scenarios:
             as: "auctionsLst"
       - loop: # Check bids
           - get: # First: post image for the user
-              url: "/media/{{ $loopElement.imageId }}"
+              url: "/media/{{ $loopElement.image }}"
               name: "GET:/media"
               headers:
                 Accept: application/octet-stream

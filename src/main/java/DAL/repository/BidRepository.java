@@ -32,7 +32,8 @@ public class BidRepository implements IBidGateway {
     public CosmosPagedIterable<BidDAO> listBids(String auctionID) {
         CosmosPagedIterable<BidDAO> pi = bids.getContainer().queryItems("SELECT * FROM bids WHERE bids.auction=\"" + auctionID + "\"", new CosmosQueryRequestOptions(), BidDAO.class);
         bids.close();
-        return CachePlus.cacheThenCPI(pi, auctionID, CachePlus.BID_LIST);
+        CachePlus.cacheThenCPI(pi, auctionID, CachePlus.BID_LIST);
+        return pi;
 
     }
 
