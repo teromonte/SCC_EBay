@@ -11,7 +11,7 @@ import java.util.Set;
 
 public class MainApplication extends Application {
 
-    public static final boolean CACHE_FLAG = false;
+    public static final boolean CACHE_FLAG = true;
     private Set<Object> singletons = new HashSet<Object>();
     private Set<Class<?>> resources = new HashSet<Class<?>>();
 

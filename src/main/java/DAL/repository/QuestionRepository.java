@@ -76,7 +76,7 @@ public class QuestionRepository implements IQuestionGateway {
     }
 
     @Override
-    public QuestionDAO getQuestionById(String id) {
+    public QuestionDAO getQuestionById(String id) throws JsonProcessingException {
         QuestionDAO a = null;
         if (CACHE_FLAG) a = CachePlus.getQuestion(id);
         if (a == null) {

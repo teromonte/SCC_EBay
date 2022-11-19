@@ -21,7 +21,7 @@ module.exports = {
 }
 
 
-const Faker = require('faker/locale/en_US')
+const Faker = require('@faker-js/faker').faker
 const fs = require('fs')
 const path = require('path')
 
@@ -326,10 +326,6 @@ function decideNextAction(context, events, done) {
 			r = 1;
 		if( r == 2)
   			auct = context.vars.auctionsLst.sample();
-		else if( r == 1)
-  			auct = context.vars.recentLst.sample();
-		else if( r == 0)
-  			auct = context.vars.popularLst.sample();
 		if( auct == null) {
 			return decideNextAction(context,events,done);
 		}

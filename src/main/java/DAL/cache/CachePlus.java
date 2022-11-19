@@ -1,6 +1,7 @@
 package main.java.DAL.cache;
 
 import com.azure.cosmos.util.CosmosPagedIterable;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import main.java.DAL.RedisCache;
 import main.java.models.DAO.AuctionDAO;
@@ -33,14 +34,11 @@ public class CachePlus {
         return null;
     }
 
-    public static UserDAO cacheGet(String id) {
-        if (!CACHE_FLAG) throw new NotFoundException();
+    public static String cacheGet(String id)  {
+        if (!CACHE_FLAG) return null;
         try (Jedis jedis = RedisCache.getCachePool().getResource()) {
             var user = jedis.get("user:" + id);
-            ObjectMapper mapper = new ObjectMapper();
-            return mapper.convertValue(user, UserDAO.class);
-        } catch (Exception e) {
-            throw new NotFoundException();
+            return user;
         }
     }
 
@@ -81,26 +79,26 @@ public class CachePlus {
     public static Session getSession(String value) {
         try (Jedis jedis = RedisCache.getCachePool().getResource()) {
             var user = jedis.get("session:" + value);
+            if (user.isEmpty()) throw new NotFoundException();
             return new Session(value, user);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
         }
     }
 
-    public static AuctionDAO getAuction(String id) {
+    public static AuctionDAO getAuction(String id) throws JsonProcessingException {
         try (Jedis jedis = RedisCache.getCachePool().getResource()) {
             var user = jedis.get("auction:" + id);
+            if (user.isEmpty()) throw new NotFoundException();
             ObjectMapper mapper = new ObjectMapper();
-            return mapper.convertValue(user, AuctionDAO.class);
+            return mapper.readValue(user, AuctionDAO.class);
         }
     }
 
-    public static QuestionDAO getQuestion(String id) {
+    public static QuestionDAO getQuestion(String id) throws JsonProcessingException {
         try (Jedis jedis = RedisCache.getCachePool().getResource()) {
             var user = jedis.get("question:" + id);
+            if (user.isEmpty()) throw new NotFoundException();
             ObjectMapper mapper = new ObjectMapper();
-            return mapper.convertValue(user, QuestionDAO.class);
+            return mapper.readValue(user, QuestionDAO.class);
         }
     }
 

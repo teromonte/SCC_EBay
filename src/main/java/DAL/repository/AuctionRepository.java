@@ -4,6 +4,7 @@ import com.azure.cosmos.models.CosmosItemRequestOptions;
 import com.azure.cosmos.models.CosmosQueryRequestOptions;
 import com.azure.cosmos.models.PartitionKey;
 import com.azure.cosmos.util.CosmosPagedIterable;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.ws.rs.NotFoundException;
 import jakarta.ws.rs.core.Response;
@@ -71,7 +72,7 @@ public class AuctionRepository implements IAuctionGateway {
     }
 
     @Override
-    public AuctionDAO getAuctionById(String id) {
+    public AuctionDAO getAuctionById(String id) throws JsonProcessingException {
         AuctionDAO a = null;
         if (CACHE_FLAG) a = CachePlus.getAuction(id);
         if (a == null)

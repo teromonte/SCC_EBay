@@ -6,6 +6,8 @@ import main.java.DAL.repository.UserRepository;
 import main.java.DAL.cache.CachePlus;
 import main.java.models.DAO.UserDAO;
 
+import javax.ws.rs.NotFoundException;
+
 public class GetUserByIDUseCase {
 
 	public static CosmosPagedIterable<UserDAO> getUserByID(String id) {
@@ -13,7 +15,7 @@ public class GetUserByIDUseCase {
         return userGateway.getUserById(id);
     }
 	
-	public static UserDAO cacheGetUserByID(String id) {
+	public static String cacheGetUserByID(String id) {
 		return CachePlus.cacheGet(id);
     }
 }

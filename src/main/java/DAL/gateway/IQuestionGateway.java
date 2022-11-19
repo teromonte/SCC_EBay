@@ -10,7 +10,7 @@ public interface IQuestionGateway {
 
     CosmosItemResponse<QuestionDAO> addQuestion(QuestionDAO questionDAO, String auctionID) throws JsonProcessingException;
 
-    QuestionDAO getQuestionById(String id);
+    QuestionDAO getQuestionById(String id) throws JsonProcessingException;
 
     CosmosItemResponse<QuestionDAO> addReply(String reply, QuestionDAO questionDAO) throws JsonProcessingException;
 }

@@ -4,74 +4,71 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b469088-9480-470d-bb72-0267c4b9bd8d" name="Changes" comment="ListAuctionsAboutToCloseUseCase fix">
-      <change afterPath="$PROJECT_DIR$/src/test/final/README" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/final/create-auctions.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/final/create-users.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.1.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.10.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.11.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.12.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.13.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.14.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.15.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.16.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.17.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.18.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.19.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.2.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.20.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.21.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.22.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.23.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.24.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.25.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.26.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.27.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.28.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.29.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.3.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.30.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.31.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.32.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.33.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.34.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.35.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.36.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.37.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.38.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.39.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.4.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.40.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.41.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.5.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.6.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.7.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.8.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/final/images/cats.9.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/final/test-utils.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/final/workload1.yml" afterDir="false" />
+    <list default="true" id="1b469088-9480-470d-bb72-0267c4b9bd8d" name="Changes" comment="cache flag fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DAL/cache/CachePlus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAL/cache/CachePlus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DAL/gateway/IAuctionGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAL/gateway/IAuctionGateway.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAL/gateway/IQuestionGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAL/gateway/IQuestionGateway.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DAL/repository/AuctionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAL/repository/AuctionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAL/repository/BidRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAL/repository/BidRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DAL/repository/QuestionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAL/repository/QuestionRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DAL/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAL/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/business/auction/ListAuctionsAboutToCloseUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/auction/ListAuctionsAboutToCloseUseCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/business/auction/ListAuctionsFromUserUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/auction/ListAuctionsFromUserUseCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/business/bid/AddBidUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/bid/AddBidUseCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/business/bid/ListBidsUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/bid/ListBidsUseCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/business/question/AddQuestionUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/question/AddQuestionUseCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/business/question/AddReplyUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/question/AddReplyUseCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/business/question/ListQuestionsUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/question/ListQuestionsUseCase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/business/user/CheckAuthenticationUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/user/CheckAuthenticationUseCase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/business/user/GetUserByIDUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/user/GetUserByIDUseCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/srv/resources/AuctionResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/srv/resources/AuctionResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/srv/resources/ControlResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/srv/resources/ControlResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/srv/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/srv/MainApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/srv/resources/UserResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/srv/resources/UserResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/report.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/reports/report.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/report.json.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/reports/report.json.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/create-auctions.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/aux/create-auctions.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/create-users.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/aux/create-users.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/final/create-auctions.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/final/create-auctions.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/final/test-utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/final/test-utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/final/workload1.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/final/workload1.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.1.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/aux/images/cats.1.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.10.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/aux/images/cats.10.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.11.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/aux/images/cats.11.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.12.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/aux/images/cats.12.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.13.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/aux/images/cats.13.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.14.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/aux/images/cats.14.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.15.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/aux/images/cats.15.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.16.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/aux/images/cats.16.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.17.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/aux/images/cats.17.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.18.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/aux/images/cats.18.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.19.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/aux/images/cats.19.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.2.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/aux/images/cats.2.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.20.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/aux/images/cats.20.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.21.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/aux/images/cats.21.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.22.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/aux/images/cats.22.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.23.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/aux/images/cats.23.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.24.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/aux/images/cats.24.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.25.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/aux/images/cats.25.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.26.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/aux/images/cats.26.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.27.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/aux/images/cats.27.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.28.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/aux/images/cats.28.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.29.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/aux/images/cats.29.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.3.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/aux/images/cats.3.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.30.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/aux/images/cats.30.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.31.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/aux/images/cats.31.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.32.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/aux/images/cats.32.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.33.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/aux/images/cats.33.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.34.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/aux/images/cats.34.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.35.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/aux/images/cats.35.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.36.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/aux/images/cats.36.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.37.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/aux/images/cats.37.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.38.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/aux/images/cats.38.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.39.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/aux/images/cats.39.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.4.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/aux/images/cats.4.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.40.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/aux/images/cats.40.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.41.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/aux/images/cats.41.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.5.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/aux/images/cats.5.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.6.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/aux/images/cats.6.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.7.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/aux/images/cats.7.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.8.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/aux/images/cats.8.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/images/cats.9.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/aux/images/cats.9.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/reports/report.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/reports/report.json.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/test-utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/aux/test-utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/users.data" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/aux/users.data" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/workload.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/aux/workload.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/workload1.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/aux/workload1.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/workload2.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/aux/workload2.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,18 +109,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/thiago/Desktop/SCC/PRACTICAL/LAB3/SCC_EBay/src/test&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "/home/thiago/Desktop/SCC/PRACTICAL/LAB3/SCC_EBay",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="main.java.business.bid" />
@@ -136,6 +133,8 @@
       <recent name="$PROJECT_DIR$/src/main/java/data" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test/final/reports" />
+      <recent name="$PROJECT_DIR$/src/test/aux" />
       <recent name="$PROJECT_DIR$/src/test/reports" />
       <recent name="$PROJECT_DIR$/.idea" />
       <recent name="$PROJECT_DIR$" />
@@ -424,7 +423,21 @@
       <option name="project" value="LOCAL" />
       <updated>1668875732299</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="cache flag">
+      <created>1668879611368</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1668879611368</updated>
+    </task>
+    <task id="LOCAL-00036" summary="cache flag fix">
+      <created>1668879927487</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1668879927487</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -445,8 +458,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="working 3" />
-    <MESSAGE value="Added Models and DAOs and Resources" />
     <MESSAGE value="structure" />
     <MESSAGE value="structure v2" />
     <MESSAGE value="add links" />
@@ -470,6 +481,8 @@
     <MESSAGE value="testes" />
     <MESSAGE value="ListAuctionsAboutToCloseUseCase" />
     <MESSAGE value="ListAuctionsAboutToCloseUseCase fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="ListAuctionsAboutToCloseUseCase fix" />
+    <MESSAGE value="cache flag" />
+    <MESSAGE value="cache flag fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="cache flag fix" />
   </component>
 </project>
