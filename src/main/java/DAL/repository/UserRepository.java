@@ -8,6 +8,7 @@ import com.azure.cosmos.util.CosmosPagedIterable;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import main.java.DAL.CosmosDBLayer;
 import main.java.DAL.RedisCache;
+import main.java.DAL.cache.CachePlus;
 import main.java.DAL.gateway.IUserGateway;
 import main.java.models.DAO.UserDAO;
 import redis.clients.jedis.Jedis;
