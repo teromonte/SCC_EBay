@@ -37,7 +37,7 @@ scenarios:
             as: "auctionsLst"
       - loop:                                   # Check bids
         - get:                          # First: post image for the user
-            url: "/media/{{ $loopElement.imageId }}"
+            url: "/media/{{ $loopElement.image }}"
             name: "GET:/media"
             headers:
               Accept: application/octet-stream
@@ -78,12 +78,8 @@ scenarios:
           json:
             user: "{{ user }}"
             pwd: "{{ pwd }}"
-      - loop:                                  
-
-
+      - loop:
         - function: "decideNextAction"
-
-
         - get:                          # Get user auctions
             url: "/user/{{ user2 }}/auctions"
             name: "GET:/user/*/auctions"
