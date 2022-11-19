@@ -8,12 +8,11 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.ws.rs.core.Response;
 import main.java.DAL.CosmosDBLayer;
 import main.java.DAL.RedisCache;
+import main.java.DAL.cache.CachePlus;
 import main.java.DAL.gateway.IAuctionGateway;
 import main.java.models.DAO.AuctionDAO;
 import main.java.utils.GenericExceptionMapper;
 import redis.clients.jedis.Jedis;
-import main.java.DAL.cache.CachePlus;
-
 
 import java.util.Random;
 
@@ -38,7 +37,7 @@ public class AuctionRepository implements IAuctionGateway {
 
         if (auction.getId() == null) {
             Random rand = new Random();
-            auction.setId(rand.nextInt(1000) + ":" +auction.getOwner());
+            auction.setId(rand.nextInt(1000) + ":" + auction.getOwner());
             auctions = getDBLayer();
             res = auctions.getContainer().createItem(auction).getItem();
             auctions.close();
@@ -80,6 +79,14 @@ public class AuctionRepository implements IAuctionGateway {
         CosmosPagedIterable<AuctionDAO> pi = auctions.getContainer().queryItems("SELECT * FROM auctions", new CosmosQueryRequestOptions(), AuctionDAO.class);
         auctions.close();
         return CachePlus.cacheThenCPI(pi, null, CachePlus.AUCTION_LIST);
+    }
+
+    @Override
+    public CosmosPagedIterable<AuctionDAO> listAllAuctionsOpen() {
+        CosmosPagedIterable<AuctionDAO> pi = auctions.getContainer().queryItems("SELECT * FROM auctions where auctions.status=\"" + "OPEN" + "\"", new CosmosQueryRequestOptions(), AuctionDAO.class);
+        auctions.close();
+        CachePlus.cacheThenCPI(pi, null, CachePlus.AUCTION_LIST);
+        return pi;
     }
 
     @Override

@@ -12,5 +12,7 @@ public interface IAuctionGateway {
 
     public CosmosPagedIterable<AuctionDAO> listAuctionsAboutToClose();
 
+    public CosmosPagedIterable<AuctionDAO> listAllAuctionsOpen();
+
     public CosmosPagedIterable<AuctionDAO> listAuctionsFromUser(String userID);
 }

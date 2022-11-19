@@ -44,7 +44,7 @@ public class AuctionResource {
             List<String> res = ListAuctionsAboutToCloseUseCase.cacheListAuctionsAboutToClose();
             return Response.ok(res).build();
         } catch (Exception e) {
-            var res = ListAuctionsAboutToCloseUseCase.listAuctionsAboutToClose().stream().toList();
+            var res = ListAuctionsAboutToCloseUseCase.listAuctionsAboutToClose();
             return Response.ok(res).build();
         }
 
