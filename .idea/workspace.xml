@@ -5,14 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1b469088-9480-470d-bb72-0267c4b9bd8d" name="Changes" comment="refac">
-      <change afterPath="$PROJECT_DIR$/src/test/workload2.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/workload.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/business/media/UploadMediaUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/media/UploadMediaUseCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/srv/resources/AuctionResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/srv/resources/AuctionResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/srv/resources/MediaResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/srv/resources/MediaResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/srv/resources/UserResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/srv/resources/UserResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/create-auctions.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/create-auctions.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/test-utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/test-utils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/users.data" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/users.data" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/workload1.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/workload1.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -333,7 +329,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668806016739</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="refac">
+      <created>1668815996645</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1668815996645</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
