@@ -43,9 +43,12 @@ public class AuctionResource {
         try {
             List<String> res = ListAuctionsAboutToCloseUseCase.cacheListAuctionsAboutToClose();
             return Response.ok(res).build();
-        } catch (Exception e) {
+        } catch (NotFoundException e) {
             var res = ListAuctionsAboutToCloseUseCase.listAuctionsAboutToClose();
             return Response.ok(res).build();
+        } catch (Exception ee) {
+            GenericExceptionMapper g = new GenericExceptionMapper();
+            return g.toResponse(ee);
         }
 
     }

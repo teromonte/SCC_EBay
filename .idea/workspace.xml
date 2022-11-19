@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b469088-9480-470d-bb72-0267c4b9bd8d" name="Changes" comment="testes">
+    <list default="true" id="1b469088-9480-470d-bb72-0267c4b9bd8d" name="Changes" comment="ListAuctionsAboutToCloseUseCase">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DAL/gateway/IAuctionGateway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAL/gateway/IAuctionGateway.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DAL/repository/AuctionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAL/repository/AuctionRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/business/auction/ListAuctionsAboutToCloseUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/business/auction/ListAuctionsAboutToCloseUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/srv/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/srv/MainApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/srv/resources/AuctionResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/srv/resources/AuctionResource.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -348,7 +348,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668846264637</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="ListAuctionsAboutToCloseUseCase">
+      <created>1668867231971</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1668867231971</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -369,7 +376,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="working" />
     <MESSAGE value="working 2" />
     <MESSAGE value="working 3" />
     <MESSAGE value="Added Models and DAOs and Resources" />
@@ -394,6 +400,7 @@
     <MESSAGE value="fix" />
     <MESSAGE value="refac" />
     <MESSAGE value="testes" />
-    <option name="LAST_COMMIT_MESSAGE" value="testes" />
+    <MESSAGE value="ListAuctionsAboutToCloseUseCase" />
+    <option name="LAST_COMMIT_MESSAGE" value="ListAuctionsAboutToCloseUseCase" />
   </component>
 </project>
