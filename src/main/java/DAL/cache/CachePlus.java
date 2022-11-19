@@ -13,6 +13,7 @@ public class CachePlus {
 	public static String BID_LIST = "bidL";
 	public static String QUESTION_LIST = "questionL";
 	public static String USER_AUCTIONS = "userAuc";
+	public static String TRASH = "deleted";
 	
     public static List<String> cacheGet(String type, String pid) { //pid -> type is "part of" object with id <pid>
         try (Jedis jedis = RedisCache.getCachePool().getResource()) {
