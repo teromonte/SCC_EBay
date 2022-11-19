@@ -34,7 +34,7 @@ public class CachePlus {
     }
 
     public static UserDAO cacheGet(String id) {
-        if (CACHE_FLAG) throw new NotFoundException();
+        if (!CACHE_FLAG) throw new NotFoundException();
         try (Jedis jedis = RedisCache.getCachePool().getResource()) {
             var user = jedis.get("user:" + id);
             ObjectMapper mapper = new ObjectMapper();

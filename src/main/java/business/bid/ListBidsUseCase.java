@@ -19,7 +19,7 @@ public class ListBidsUseCase {
     }
 
     public static List<String> cacheListBids(String auctionID) throws NotFoundException {
-        if (CACHE_FLAG) throw new NotFoundException();
+        if (!CACHE_FLAG) throw new NotFoundException();
         List<String> res = CachePlus.cacheGet(CachePlus.BID_LIST, auctionID);
         if (res == null) throw new NotFoundException();
         else if (res.isEmpty()) throw new NotFoundException();

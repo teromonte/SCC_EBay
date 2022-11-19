@@ -19,7 +19,7 @@ public class ListAuctionsAboutToCloseUseCase {
     }
 
     public static List<String> cacheListAuctionsAboutToClose() throws NotFoundException {
-        if (CACHE_FLAG) throw new NotFoundException();
+        if (!CACHE_FLAG) throw new NotFoundException();
         List<String> res = CachePlus.cacheGet(CachePlus.AUCTION_LIST, null);
         if (res == null) throw new NotFoundException("Not in cache");
         else if (res.isEmpty()) throw new NotFoundException("Not in cache");
