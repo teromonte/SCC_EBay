@@ -34,7 +34,8 @@ public class UserRepository implements IUserGateway {
         if (res.getStatusCode() < 300) {
             try (Jedis jedis = RedisCache.getCachePool().getResource()) {
                 jedis.del("user:" + id);
-                jedis.del("auctionL:" + id);
+                jedis.del(CachePlus.AUCTION_LIST);
+				jedis.rpush(CachePlus.TRASH, id);
             } catch (Exception e) {
                 e.printStackTrace();
             }
